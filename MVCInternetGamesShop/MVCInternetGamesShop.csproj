@@ -189,6 +189,10 @@
     <Compile Include="Migrations\201706021215308_RemoveAnnotationsFromAddress.Designer.cs">
       <DependentUpon>201706021215308_RemoveAnnotationsFromAddress.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706021241512_AddNullableIntToAddress.cs" />
+    <Compile Include="Migrations\201706021241512_AddNullableIntToAddress.Designer.cs">
+      <DependentUpon>201706021241512_AddNullableIntToAddress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -278,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706021215308_RemoveAnnotationsFromAddress.resx">
       <DependentUpon>201706021215308_RemoveAnnotationsFromAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706021241512_AddNullableIntToAddress.resx">
+      <DependentUpon>201706021241512_AddNullableIntToAddress.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -20,9 +20,9 @@ namespace MVCInternetGamesShop.Models
         public string Street { get; set; }
 
         
-        public int StreetNumber { get; set; }
+        public int? StreetNumber { get; set; }
 
-        public int HouseNumber { get; set; }
+        public int? HouseNumber { get; set; }
 
         
         public string PostCode { get; set; }
