@@ -20,6 +20,9 @@ namespace MVCInternetGamesShop.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Game> Games { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

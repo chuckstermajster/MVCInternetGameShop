@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using MVCInternetGamesShop.Models;
 
-namespace GamesShop.Models
+namespace MVCInternetGamesShop.Models
 {
     public class Order
     {

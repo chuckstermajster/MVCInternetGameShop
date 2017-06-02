@@ -177,10 +177,17 @@
     <Compile Include="Migrations\201706020920503_InitialCreate.Designer.cs">
       <DependentUpon>201706020920503_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706021140534_AddAddresOrderAndGameToModel.cs" />
+    <Compile Include="Migrations\201706021140534_AddAddresOrderAndGameToModel.Designer.cs">
+      <DependentUpon>201706021140534_AddAddresOrderAndGameToModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Game.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -254,6 +261,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706020920503_InitialCreate.resx">
       <DependentUpon>201706020920503_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706021140534_AddAddresOrderAndGameToModel.resx">
+      <DependentUpon>201706021140534_AddAddresOrderAndGameToModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

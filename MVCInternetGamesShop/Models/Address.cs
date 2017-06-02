@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace GamesShop.Models
+namespace MVCInternetGamesShop.Models
 {
     public class Address
     {
