@@ -12,18 +12,19 @@ namespace MVCInternetGamesShop.Models
         
         public int Id { get; set; }
 
+
         [Required(ErrorMessage = "To pole jest wymagane")]
         public string City { get; set; }
 
-        [Required(ErrorMessage = "To pole jest wymagane")]
+        
         public string Street { get; set; }
 
-        [Required(ErrorMessage = "To pole jest wymagane")]
+        
         public int StreetNumber { get; set; }
 
         public int HouseNumber { get; set; }
 
-        [Required(ErrorMessage = "To pole jest wymagane")]
+        
         public string PostCode { get; set; }
 
         
