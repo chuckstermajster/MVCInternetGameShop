@@ -7,6 +7,6 @@ namespace MVCInternetGamesShop.Models
 {
     public class Class1
     {
-
+        aaa
     }
 }
