@@ -173,6 +173,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\CartManager.cs" />
+    <Compile Include="Infrastructure\Const.cs" />
+    <Compile Include="Infrastructure\ISessionManager.cs" />
+    <Compile Include="Infrastructure\SessionManager.cs" />
     <Compile Include="Migrations\201706020920503_InitialCreate.cs" />
     <Compile Include="Migrations\201706020920503_InitialCreate.Designer.cs">
       <DependentUpon>201706020920503_InitialCreate.cs</DependentUpon>
@@ -196,6 +200,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\CartPossition.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

@@ -10,9 +10,11 @@ namespace MVCInternetGamesShop.Models
     {
         public int Id { get; set; }
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         public Address Address { get; set; }
+
+        public DateTime CreationTime { get; set; }
 
         public virtual ApplicationUser User { get; set; }
 
