@@ -201,6 +201,10 @@
     <Compile Include="Migrations\201706131640031_AddCartPosition.Designer.cs">
       <DependentUpon>201706131640031_AddCartPosition.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706131648478_AddCartPositionToModel.cs" />
+    <Compile Include="Migrations\201706131648478_AddCartPositionToModel.Designer.cs">
+      <DependentUpon>201706131648478_AddCartPositionToModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -297,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706131640031_AddCartPosition.resx">
       <DependentUpon>201706131640031_AddCartPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706131648478_AddCartPositionToModel.resx">
+      <DependentUpon>201706131648478_AddCartPositionToModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

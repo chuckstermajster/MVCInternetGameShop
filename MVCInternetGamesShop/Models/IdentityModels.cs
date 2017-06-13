@@ -26,6 +26,7 @@ namespace MVCInternetGamesShop.Models
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Game> Games { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<CartPossition> CartPossitions { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
