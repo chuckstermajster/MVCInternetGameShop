@@ -209,6 +209,10 @@
     <Compile Include="Migrations\201706150936522_AddPlatformToModel.Designer.cs">
       <DependentUpon>201706150936522_AddPlatformToModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706150945192_PopulatePlatforms.cs" />
+    <Compile Include="Migrations\201706150945192_PopulatePlatforms.Designer.cs">
+      <DependentUpon>201706150945192_PopulatePlatforms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -317,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706150936522_AddPlatformToModel.resx">
       <DependentUpon>201706150936522_AddPlatformToModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706150945192_PopulatePlatforms.resx">
+      <DependentUpon>201706150945192_PopulatePlatforms.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
