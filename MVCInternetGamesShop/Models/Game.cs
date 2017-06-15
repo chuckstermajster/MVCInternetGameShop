@@ -12,6 +12,7 @@ namespace MVCInternetGamesShop.Models
         public decimal Price { get; set; }
         public string ImageName { get; set; }
         public Platform Platform { get; set; }
+        public bool IsBestseller { get; set; }
 
 
     }
