@@ -1,16 +1,21 @@
-﻿@{
+﻿@model IEnumerable<MVCInternetGamesShop.Models.Game>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div id="banner">
-    
+    <img src="#"/>
     <h1>BANNER PLACEHOLDER</h1>
 </div>
 
+
+
 <div class="bestseller">
+    <h1>Bestsellery</h1>
     <div class="row">
         <div class="col-md-4">
-            <div><img src=""  /></div>
+            <div class="GamePhoto"><a href="@Url.Action("Details", "Game", new {id = Game. )"><img src="https://upload.wikimedia.org/wikipedia/en/9/90/Rise_of_the_Guardians_%28video_game%29_cover.jpg"/></a></div>
         </div>
         <div class="col-md-4">
             <h2>Get more libraries</h2>
