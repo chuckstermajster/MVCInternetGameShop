@@ -5,7 +5,7 @@
 }
 
 <div id="banner">
-    <img src="#"/>
+    <img src="#" />
     <h1>BANNER PLACEHOLDER</h1>
 </div>
 
@@ -15,17 +15,19 @@
     <h1>Bestsellery</h1>
     <div class="row">
         <div class="col-md-4">
-            <div class="GamePhoto"><a href="@Url.Action("About", "Home")"><img src="https://upload.wikimedia.org/wikipedia/en/9/90/Rise_of_the_Guardians_%28video_game%29_cover.jpg"/></a></div>
+            @foreach ( var newest in Model.PCBestsellers)
+            {
+                <div class="rectangle"></div>
+                    
+                
+
+            }
         </div>
         <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
         </div>
     </div>
 </div>
