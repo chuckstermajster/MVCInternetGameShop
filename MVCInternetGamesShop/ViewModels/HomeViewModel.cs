@@ -8,7 +8,11 @@ namespace MVCInternetGamesShop.ViewModels
 {
     public class HomeViewModel
     {
-        IEnumerable<Game> New { get; set; }
-        IEnumerable<Game> Bestseller { get; set; }
+        public IEnumerable<Game> XBoxNewest { get; set; }
+        public IEnumerable<Game> XBoxBestsellers { get; set; }
+        public IEnumerable<Game> Ps4Newest { get; set; }
+        public IEnumerable<Game> Ps4Bestsellers { get; set; }
+        public IEnumerable<Game> PCNewest { get; set; }
+        public IEnumerable<Game> PCBestsellers { get; set; }
     }
 }
