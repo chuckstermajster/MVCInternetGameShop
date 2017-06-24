@@ -1,4 +1,5 @@
 ﻿@model MVCInternetGamesShop.ViewModels.HomeViewModel
+@using MVCInternetGamesShop.Infrastructure
 
 @{
     ViewBag.Title = "Home Page";
@@ -15,12 +16,12 @@
     <h1>Bestsellery</h1>
     <div class="row">
         <div class="col-md-4">
-            @foreach ( var newest in Model.PCBestsellers)
+            @foreach (var newest in Model.PCBestsellers)
             {
-                <div class="rectangle"></div>
-                    
-                
-
+                <li>
+                    <h1>@newest.Name</h1>
+                    <img src="@Url.PCCoversPath(newest.ImageName)" />
+                </li>
             }
         </div>
         <div class="col-md-4">
