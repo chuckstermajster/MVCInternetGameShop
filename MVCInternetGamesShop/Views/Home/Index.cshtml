@@ -21,7 +21,7 @@
 
             <li>
                 <h1>@bestseller.Name</h1>
-                <img src="@Url.PCCoversPath(bestseller.ImageName)" />
+                <a href="@Url.Action("Details", "Games", new { id = bestseller.Id })"><img src="@Url.PCCoversPath(bestseller.ImageName)" /></a>
             </li>
 
 
