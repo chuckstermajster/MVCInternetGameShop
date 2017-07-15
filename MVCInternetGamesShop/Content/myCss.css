@@ -10,3 +10,14 @@
     height: 70px;
     background-color: aquamarine;
 }
+
+.bestseller li {
+    list-style-type: none;
+    float: left;
+    margin: 8px;
+}
+
+.PC {
+    background-color: #4848d1;
+}
+

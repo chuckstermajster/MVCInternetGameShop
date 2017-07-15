@@ -12,23 +12,42 @@
 
 
 
-<div class="bestseller">
-    <h1>Bestsellery</h1>
-    <div class="row">
-        <div class="col-md-4">
-            @foreach (var newest in Model.PCBestsellers)
-            {
-                <li>
-                    <h1>@newest.Name</h1>
-                    <img src="@Url.PCCoversPath(newest.ImageName)" />
-                </li>
-            }
-        </div>
-        <div class="col-md-4">
+<div class="PC">
+    <h1>Bestsellery - PC</h1>
 
-        </div>
-        <div class="col-md-4">
+    <ul class="list-inline">
+        @foreach (var bestseller in Model.PCBestsellers)
+        {
 
-        </div>
-    </div>
+            <li>
+                <h1>@bestseller.Name</h1>
+                <img src="@Url.PCCoversPath(bestseller.ImageName)" />
+            </li>
+
+
+
+        }
+    </ul>
+
+
+
+
+
+    <h1>Nowości PC</h1>
+
+    <ul class="list-inline">
+        @foreach (var newest in Model.PCNewest)
+        {
+
+            <li>
+                <h1>@newest.Name</h1>
+                <a href="@Url.Action("Details", "Games", new { id = newest.Id })"><img src="@Url.PCCoversPath(newest.ImageName)" /></a>
+            </li>
+
+
+
+        }
+    </ul>
+
+
 </div>
