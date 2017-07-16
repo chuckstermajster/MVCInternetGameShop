@@ -1,0 +1,30 @@
+﻿
+@model MVCInternetGamesShop.Models.Game
+@using MVCInternetGamesShop.Infrastructure
+ 
+@{
+    ViewBag.Title = "GameDetails";
+}
+
+<h2>@Model.Name</h2>
+@if(Model.PlatformId == 1) { 
+<div>
+    <img src="@Url.Ps4CoversPath(Model.ImageName)" />
+</div>
+}
+
+@if (Model.PlatformId == 2)
+{
+    <div>
+        <img src="@Url.PCCoversPath(Model.ImageName)" />
+    </div>
+}
+
+@if (Model.PlatformId == 3)
+{
+    <div>
+        <img src="@Url.XBoxOneCoversPath(Model.ImageName)" />
+    </div>
+}
+
+

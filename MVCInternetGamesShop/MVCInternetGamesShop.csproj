@@ -232,6 +232,10 @@
     <Compile Include="Migrations\201706231423036_PopulateGames.Designer.cs">
       <DependentUpon>201706231423036_PopulateGames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707162122157_AddDescriptionPropertyToGame.cs" />
+    <Compile Include="Migrations\201707162122157_AddDescriptionPropertyToGame.Designer.cs">
+      <DependentUpon>201707162122157_AddDescriptionPropertyToGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -316,11 +320,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Games\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\GameCovers\XBOXONE\" />
     <Folder Include="Content\images\" />
-    <Folder Include="Views\Games\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -369,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706231423036_PopulateGames.resx">
       <DependentUpon>201706231423036_PopulateGames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707162122157_AddDescriptionPropertyToGame.resx">
+      <DependentUpon>201707162122157_AddDescriptionPropertyToGame.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
