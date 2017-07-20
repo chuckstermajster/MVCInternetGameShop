@@ -28,6 +28,7 @@ namespace MVCInternetGamesShop.Models
         public DbSet<Order> Orders { get; set; }
         public DbSet<CartPossition> CartPossitions { get; set; }
         public DbSet<Platform> Platforms { get; set; }
+        public DbSet<OrderPosition> OrderPositons { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
