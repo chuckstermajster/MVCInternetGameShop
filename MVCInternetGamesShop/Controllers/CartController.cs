@@ -43,5 +43,11 @@ namespace MVCInternetGamesShop.Controllers
             cartManager.AddToCart(id);
             return RedirectToAction("Index");
         }
+
+        public int GetHowManyItemsInCart()
+        {
+            int itemsInCart = cartManager.GetQuantityOfCartPossitions();
+            return itemsInCart;
+        }
     }
 }
