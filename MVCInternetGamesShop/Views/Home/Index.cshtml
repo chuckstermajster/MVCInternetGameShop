@@ -22,7 +22,8 @@
             <li>
                 <h1>@bestseller.Name</h1>
                 <a href="@Url.Action("Details", "Games", new { id = bestseller.Id })"><img src="@Url.PCCoversPath(bestseller.ImageName)" /></a>
-            </li>
+                <a class="btn btn-primary" href="@Url.Action("AddToCart", "Cart", new { id = bestseller.Id })">Dodaj do koszyka<</a>
+</li>
 
 
 

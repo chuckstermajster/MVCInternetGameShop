@@ -17,18 +17,18 @@ namespace MVCInternetGamesShop.Infrastructure
             this._context = _context;
         }
 
-        public List<CartPossition> GetCart()
+        public List<CartPosition> GetCart()
         {
-            List<CartPossition> cart;
+            List<CartPosition> cart;
 
-            if (session.Get<List<CartPossition>>(Const.CartSessionKey) == null)
+            if (session.Get<List<CartPosition>>(Const.CartSessionKey) == null)
             {
-                cart = new List<CartPossition>();
+                cart = new List<CartPosition>();
             }
 
             else
             {
-                cart = session.Get<List<CartPossition>>(Const.CartSessionKey) as List<CartPossition>;
+                cart = session.Get<List<CartPosition>>(Const.CartSessionKey) as List<CartPosition>;
             }
 
             return cart;
@@ -50,7 +50,7 @@ namespace MVCInternetGamesShop.Infrastructure
 
                 if (gameToAdd != null)
                 {
-                    var newCartPossition = new CartPossition()
+                    var newCartPossition = new CartPosition()
                     {
                         Game = gameToAdd,
                         PriceOfItem = gameToAdd.Price,
@@ -82,7 +82,7 @@ namespace MVCInternetGamesShop.Infrastructure
             return 0;
         }
 
-        public decimal GetQuantityOfCart()
+        public decimal GetValueOfCart()
         {
             var cart = GetCart();
             return cart.Sum(k => (k.Quantity * k.PriceOfItem));
@@ -107,7 +107,7 @@ namespace MVCInternetGamesShop.Infrastructure
 
         public void EmptyCart()
         {
-            session.Set<List<CartPossition>>(Const.CartSessionKey, null);
+            session.Set<List<CartPosition>>(Const.CartSessionKey, null);
         }
     }
 }

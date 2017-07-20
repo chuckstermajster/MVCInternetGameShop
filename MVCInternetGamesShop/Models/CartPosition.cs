@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MVCInternetGamesShop.Models
 {
-    public class CartPossition
+    public class CartPosition
     {
         public int Id { get; set; }
         public Game Game { get; set; }

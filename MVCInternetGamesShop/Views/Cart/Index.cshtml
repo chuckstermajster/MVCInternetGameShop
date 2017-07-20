@@ -1,0 +1,22 @@
+﻿@model MVCInternetGamesShop.ViewModels.CartViewModel
+@using MVCInternetGamesShop.Infrastructure
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Koszyk</h2>
+
+@foreach(var cartPosition in Model.CartPosition)
+{
+    <tr>
+        <td>@cartPosition.Game.Name</td>
+        <td>@cartPosition.PriceOfItem</td>
+        <td>@cartPosition.Quantity</td>
+        <td>Usuń</td>
+        <td></td>
+
+    </tr>
+}
+
+<p>Razem @Model.TotalPrice</p>
+
