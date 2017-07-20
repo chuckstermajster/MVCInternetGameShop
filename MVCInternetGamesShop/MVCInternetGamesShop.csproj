@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartPossitionsController.cs" />
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -236,6 +237,10 @@
     <Compile Include="Migrations\201707162122157_AddDescriptionPropertyToGame.Designer.cs">
       <DependentUpon>201707162122157_AddDescriptionPropertyToGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707202135232_AddOrderPositionToModel.cs" />
+    <Compile Include="Migrations\201707202135232_AddOrderPositionToModel.Designer.cs">
+      <DependentUpon>201707202135232_AddOrderPositionToModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -244,6 +249,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderPosition.cs" />
     <Compile Include="Models\Platform.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -321,6 +327,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Games\Details.cshtml" />
+    <Content Include="Views\CartPossitions\Create.cshtml" />
+    <Content Include="Views\CartPossitions\Delete.cshtml" />
+    <Content Include="Views\CartPossitions\Details.cshtml" />
+    <Content Include="Views\CartPossitions\Edit.cshtml" />
+    <Content Include="Views\CartPossitions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\GameCovers\XBOXONE\" />
@@ -376,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707162122157_AddDescriptionPropertyToGame.resx">
       <DependentUpon>201707162122157_AddDescriptionPropertyToGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707202135232_AddOrderPositionToModel.resx">
+      <DependentUpon>201707202135232_AddOrderPositionToModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
