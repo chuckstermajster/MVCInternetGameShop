@@ -1,8 +1,9 @@
 ﻿#banner {
     width:auto;
-    height:200px;
+    height:278px;
     background-color:cadetblue;
     text-align: center;
+    
 }
 
 .rectangle {
@@ -11,13 +12,29 @@
     background-color: aquamarine;
 }
 
-.bestseller li {
-    list-style-type: none;
-    float: left;
-    margin: 8px;
+.bestsellers {
+    height: 100px;
+    width: 100px;
+    background-color: green;
 }
 
-.PC {
-    background-color: #4848d1;
+img {
+    max-height: 100%;
+    max-width: 100%;
 }
+
+
+
+.game {
+    background-color: tan !important;
+    height: 200px;
+    width: 200px;
+    
+}
+
+
+
+
+
+
 
