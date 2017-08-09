@@ -278,7 +278,7 @@
     <Content Include="Content\GameCovers\PS4\RiseOfTheTombRider.jpg" />
     <Content Include="Content\GameCovers\PS4\TheLastOfUs.jpg" />
     <Content Include="Content\GameCovers\PS4\Yesterday Origins.jpg" />
-    <Content Include="Content\myCss.css" />
+    <Content Include="Content\myCss1.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

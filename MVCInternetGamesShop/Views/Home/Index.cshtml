@@ -1,6 +1,7 @@
 ﻿@model MVCInternetGamesShop.ViewModels.HomeViewModel
 @using MVCInternetGamesShop.Infrastructure
 
+
 @{
     ViewBag.Title = "Home Page";
 }
@@ -9,49 +10,71 @@
     <h1>BANNER PLACEHOLDER</h1>
 </div>
 
+<div class="jumbotron">
+    <div class="bestsellers">
+
+        <h1>Bestsellery</h1>
+        <ul class="list-inline">
+            @foreach (var bestseller in Model.PCBestsellers)
+            {
+
+                <li>
 
 
-<div class="bestsellers">
-</div>
-    <h1>Bestsellery - PC</h1>
+                    <p>@bestseller.Name</p>
 
-    <ul>
-        @foreach (var bestseller in Model.PCBestsellers)
-        {
-
-            <li>
-                <h1>@bestseller.Name</h1>
-                <a href="@Url.Action("Details", "Games", new { id = bestseller.Id })"><img src="@Url.PCCoversPath(bestseller.ImageName)" /></a>
-
-            </li>
-            <li><a class="btn btn-primary" href="@Url.Action("AddToCart", "Cart", new { id = bestseller.Id })">Dodaj do koszyka</a></li>
-        }
-    </ul>
+                    <div class="img-container"><a href="@Url.Action(" Details", "Games" , new { id=bestseller.Id })"><img src="@Url.PCCoversPath(bestseller.ImageName)" /></a></div>
+                    <a class="btn btn-primary" href="@Url.Action("AddToCart","Cart", new { id=bestseller.Id })">Dodaj do koszyka</a>
 
 
+                </li>
+            }
+
+        </ul>
+    </div>
+
+    <h1>Nowości</h1>
 
 
-
-
-
-<div class="new-games">
-    <h1>Nowości PC</h1>
-
-    <ul>
+    <ul class="list-inline">
         @foreach (var newest in Model.PCNewest)
-        {
+            {
 
             <li>
-                <div class="main-page-game">
-                    <h1>@newest.Name</h1>
 
-                    <a href="@Url.Action("Details", "Games", new { id = newest.Id })"><img src="@Url.PCCoversPath(newest.ImageName)" /></a>
-                </div>
+
+                <p>@newest.Name</p>
+
+                <div class="img-container"><a href="@Url.Action(" Details", "Games" , new { id=newest.Id })"><img src="@Url.PCCoversPath(newest.ImageName)" /></a></div>
+                <a class="btn btn-primary" href="@Url.Action("AddToCart","Cart", new { id=newest.Id })">Dodaj do koszyka</a>
+
+
             </li>
+
         }
     </ul>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

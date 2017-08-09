@@ -25,8 +25,8 @@ namespace MVCInternetGamesShop
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/myCss.css",
-                      "~/Content/site.css"));
+                      
+                      "~/Content/myCss1.css"));
         }
     }
 }

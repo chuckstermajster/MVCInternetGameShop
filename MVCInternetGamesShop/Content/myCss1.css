@@ -1,0 +1,41 @@
+﻿
+
+
+.list li {
+    
+    margin-left: 12px;
+}
+
+.button {
+    display: block;
+}
+
+
+#banner {
+    margin-top: 50px;
+    width:auto;
+    height:278px;
+    background-color:#e6b9b9;
+    text-align: center;
+    
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+.img-container {
+    height: 300px;
+    width: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+
