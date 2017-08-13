@@ -178,6 +178,7 @@
     <Compile Include="Infrastructure\AppConfig.cs" />
     <Compile Include="Infrastructure\CartManager.cs" />
     <Compile Include="Infrastructure\Const.cs" />
+    <Compile Include="Infrastructure\Initializer.cs" />
     <Compile Include="Infrastructure\ISessionManager.cs" />
     <Compile Include="Infrastructure\SessionManager.cs" />
     <Compile Include="Infrastructure\UrlHelpers.cs" />

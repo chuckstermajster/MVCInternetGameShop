@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using MVCInternetGamesShop.Infrastructure;
 
 namespace MVCInternetGamesShop.Models
 {
@@ -23,6 +24,13 @@ namespace MVCInternetGamesShop.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+        static ApplicationDbContext()
+        {
+            Database.SetInitializer<ApplicationDbContext>(new Initializer());
+        }
+
+        
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Game> Games { get; set; }
         public DbSet<Order> Orders { get; set; }

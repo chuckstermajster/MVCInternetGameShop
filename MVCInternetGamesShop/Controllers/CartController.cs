@@ -41,7 +41,7 @@ namespace MVCInternetGamesShop.Controllers
         public ActionResult AddToCart(int id)
         {
             cartManager.AddToCart(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
 
         public int GetHowManyItemsInCart()
