@@ -246,6 +246,10 @@
     <Compile Include="Migrations\201707202152550_CorrectTypoInModel.Designer.cs">
       <DependentUpon>201707202152550_CorrectTypoInModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708132016272_DeleteDataFromGames.cs" />
+    <Compile Include="Migrations\201708132016272_DeleteDataFromGames.Designer.cs">
+      <DependentUpon>201708132016272_DeleteDataFromGames.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -395,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707202152550_CorrectTypoInModel.resx">
       <DependentUpon>201707202152550_CorrectTypoInModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708132016272_DeleteDataFromGames.resx">
+      <DependentUpon>201708132016272_DeleteDataFromGames.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
