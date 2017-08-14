@@ -39,11 +39,15 @@ namespace MVCInternetGamesShop.Controllers
             return View(viewModel);
         }
 
-        public ActionResult About()
+        public ActionResult Platform(int id)
         {
-            ViewBag.Message = "Your application description page.";
+            var games = _context.Games.Where(g => g.PlatformId == id);
+            var viewModel = new PlatformViewModel
+            {
+                Games = games
+            };
 
-            return View();
+            return View(viewModel);
         }
 
         public ActionResult Contact()

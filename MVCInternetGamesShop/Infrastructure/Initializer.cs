@@ -21,12 +21,12 @@ namespace MVCInternetGamesShop.Infrastructure
             {
                 new Game () {Name="Tomb Raider", PlatformId = 1, Price = 200, IsBestseller = false, Description = "Gra z Larą Croft na PS4", ImageName="RiseOfTheTombRider.jpg", ReleaseDate= new DateTime(2015, 11, 11) },
                 new Game () {Name="Tomb Raider", PlatformId = 2, Price = 220, IsBestseller = false, Description = "Gra z Larą Croft na PC", ImageName="TombRaider.jpg", ReleaseDate= new DateTime(2015, 11, 11) },
-                new Game () {Name="Tomb Raider", PlatformId = 3, Price = 230, IsBestseller = false, Description = "Gra z Larą Croft na XBOX", ImageName="TombRaiderXBOX.jpg", ReleaseDate= new DateTime(2015, 11, 11) },
+                new Game () {Name="Tomb Raider", PlatformId = 3, Price = 230, IsBestseller = false, Description = "Gra z Larą Croft na XBOX", ImageName="TombRaiderXBOX.jpg", ReleaseDate= new DateTime(2017, 07, 31) },
                 new Game () {Name="Horizon Zero Dawn", PlatformId = 1, Price = 240, IsBestseller = true, Description = "Gra Horizon Zero Dawn na PS4", ImageName="HorizonZeroDawn.jpg", ReleaseDate= new DateTime(2015, 11, 11) },
                 new Game () {Name="FEAR", PlatformId = 2, Price = 140, IsBestseller = true, Description = "Gra FEAR na PC", ImageName="FEAR.jpg", ReleaseDate= new DateTime(2015, 11, 11) },
                 new Game () {Name="Gears Of War", PlatformId = 3, Price = 100, IsBestseller = true, Description = "Gra Gears of War na XBOX", ImageName="GearsOfWar.jpg", ReleaseDate= new DateTime(2015, 11, 11) },
                 new Game () {Name="BloodBorne", PlatformId = 1, Price = 270, IsBestseller = true, Description = "Gra BloodBorne na PS4", ImageName="BloodBorne.jpg", ReleaseDate= new DateTime(2015, 11, 11) },
-                new Game () {Name="The Sims 4", PlatformId = 2, Price = 216, IsBestseller = true, Description = "Gra The Sims 4 na PC", ImageName="The sims 4.jpg", ReleaseDate= new DateTime(2015, 11, 11) },
+                new Game () {Name="The Sims 4", PlatformId = 2, Price = 216, IsBestseller = true, Description = "Gra The Sims 4 na PC", ImageName="The sims 4.jpg", ReleaseDate= new DateTime(2017, 11, 11) },
                 new Game () {Name="Mafia III", PlatformId = 3, Price = 244, IsBestseller = true, Description = "Gra Mafia III na XBOX", ImageName="Mafia III.jpg", ReleaseDate= new DateTime(2015, 11, 11) },
                 new Game () {Name="Life is strange", PlatformId = 1, Price = 254, IsBestseller = true, Description = "Gra Life is Strange na PS4", ImageName="LifeIsStrange.jpg", ReleaseDate= new DateTime(2015, 11, 11) },
                 new Game () {Name="Life is strange", PlatformId = 2, Price = 255, IsBestseller = true, Description = "Gra Life is Strange na PC", ImageName="LifeIsStrange.jpg", ReleaseDate= new DateTime(2015, 11, 11) },
@@ -43,7 +43,7 @@ namespace MVCInternetGamesShop.Infrastructure
             foreach (Game game in games)
             {
                 context.Games.Add(game);
-                context.SaveChanges();
+                context.SaveChanges();                
             }
         }
     }

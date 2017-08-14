@@ -13,7 +13,7 @@
 <div class="jumbotron">
     <div class="bestsellers">
 
-        <h1>Bestsellery</h1>
+        <h1>Bestsellery - PC</h1>
         <ul class="list-inline">
             @foreach (var bestseller in Model.PCBestsellers)
             {
@@ -33,7 +33,7 @@
         </ul>
     </div>
 
-    <h1>Nowości</h1>
+    <h1>Nowości - PC</h1>
 
 
     <ul class="list-inline">
@@ -46,6 +46,92 @@
                 <p>@newest.Name</p>
 
                 <div class="img-container"><a href="@Url.Action(" Details", "Games" , new { id=newest.Id })"><img src="@Url.PCCoversPath(newest.ImageName)" /></a></div>
+                <a class="btn btn-primary" href="@Url.Action("AddToCart","Cart", new { id=newest.Id })">Dodaj do koszyka</a>
+
+
+            </li>
+
+        }
+    </ul>
+
+    <div class="bestsellers">
+
+        <h1>Bestsellery - PS4</h1>
+        <ul class="list-inline">
+            @foreach (var bestseller in Model.Ps4Bestsellers)
+            {
+
+                <li>
+
+
+                    <p>@bestseller.Name</p>
+
+                    <div class="img-container"><a href="@Url.Action(" Details", "Games" , new { id=bestseller.Id })"><img src="@Url.Ps4CoversPath(bestseller.ImageName)" /></a></div>
+                    <a class="btn btn-primary" href="@Url.Action("AddToCart","Cart", new { id=bestseller.Id })">Dodaj do koszyka</a>
+
+
+                </li>
+            }
+
+        </ul>
+    </div>
+
+    <h1>Nowości - PS4</h1>
+
+
+    <ul class="list-inline">
+        @foreach (var newest in Model.Ps4Newest)
+            {
+
+            <li>
+
+
+                <p>@newest.Name</p>
+
+                <div class="img-container"><a href="@Url.Action(" Details", "Games" , new { id=newest.Id })"><img src="@Url.Ps4CoversPath(newest.ImageName)" /></a></div>
+                <a class="btn btn-primary" href="@Url.Action("AddToCart","Cart", new { id=newest.Id })">Dodaj do koszyka</a>
+
+
+            </li>
+
+        }
+    </ul>
+
+    <div class="bestsellers">
+
+        <h1>Bestsellery - XBOX</h1>
+        <ul class="list-inline">
+            @foreach (var bestseller in Model.XBoxBestsellers)
+            {
+
+                <li>
+
+
+                    <p>@bestseller.Name</p>
+
+                    <div class="img-container"><a href="@Url.Action(" Details", "Games" , new { id=bestseller.Id })"><img src="@Url.XBoxOneCoversPath(bestseller.ImageName)" /></a></div>
+                    <a class="btn btn-primary" href="@Url.Action("AddToCart","Cart", new { id=bestseller.Id })">Dodaj do koszyka</a>
+
+
+                </li>
+            }
+
+        </ul>
+    </div>
+
+    <h1>Nowości - XBOX</h1>
+
+
+    <ul class="list-inline">
+        @foreach (var newest in Model.XBoxNewest)
+            {
+
+            <li>
+
+
+                <p>@newest.Name</p>
+
+                <div class="img-container"><a href="@Url.Action(" Details", "Games" , new { id=newest.Id })"><img src="@Url.XBoxOneCoversPath(newest.ImageName)" /></a></div>
                 <a class="btn btn-primary" href="@Url.Action("AddToCart","Cart", new { id=newest.Id })">Dodaj do koszyka</a>
 
 

@@ -1,0 +1,10 @@
+﻿@model MVCInternetGamesShop.ViewModels.PlatformViewModel
+@{
+    ViewBag.Title = "Platform";
+}
+
+<h2>Platform</h2>
+@foreach(var games in Model.Games)
+{
+    <p>@games.Name</p>
+}
