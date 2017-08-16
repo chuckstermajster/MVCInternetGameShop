@@ -21,9 +21,14 @@ img {
     max-height: 100%;
     max-width: 100%;
 }
-.img-container {
+.img-container-large {
     height: 300px;
     width: 300px;
+}
+
+.img-container-small {
+    height: 100px;
+    width: 100px;
 }
 
 

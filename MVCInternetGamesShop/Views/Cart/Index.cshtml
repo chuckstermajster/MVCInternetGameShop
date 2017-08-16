@@ -6,17 +6,61 @@
 
 <h2>Koszyk</h2>
 
-@foreach(var cartPosition in Model.CartPosition)
-{
-    <tr>
-        <td>@cartPosition.Game.Name</td>
-        <td>@cartPosition.PriceOfItem</td>
-        <td>@cartPosition.Quantity</td>
-        <td>Usuń</td>
-        <td></td>
+<table class="table">
+    <thead>
+        <tr>
 
-    </tr>
-}
+            <th>Miniaturka</th>
+            <th>Nazwa Gry</th>
+            <th>Cena</th>
+            <th>Ilość</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @{ string src = "1";
+            foreach (var cartPosition in Model.CartPosition)
+            {
+
+                {
+                    if (cartPosition.Game.PlatformId == 1)
+                    {
+                        src = Url.Ps4CoversPath(cartPosition.Game.ImageName);
+                    }
+                    else if (cartPosition.Game.PlatformId == 2)
+                    {
+                        src = Url.PCCoversPath(cartPosition.Game.ImageName);
+                    }
+                    else if (cartPosition.Game.PlatformId == 3)
+                    {
+                        src = Url.XBoxOneCoversPath(cartPosition.Game.ImageName);
+                    }
+                }
+
+                <tr>
+                    <td>
+                        <div class="img-container-small"><a><img src="@src" /></a></div>
+                    </td>
+
+                    <td>@cartPosition.Game.Name</td>
+                    <td>@cartPosition.PriceOfItem</td>
+                    <td>@cartPosition.Quantity</td>
+                    <td>Usuń</td>
+
+
+                </tr>
+            }
+
+            
+
+        }
+
+
+        
+    </tbody>
+
+
+</table>
 
 <p>Razem @Model.TotalPrice</p>
 
