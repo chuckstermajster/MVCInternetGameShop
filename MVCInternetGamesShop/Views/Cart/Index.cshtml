@@ -37,30 +37,31 @@
                     }
                 }
 
-                <tr>
+                <tr id="delete-row-js-@cartPosition.Game.Id">
                     <td>
                         <div class="img-container-small"><a><img src="@src" /></a></div>
                     </td>
 
                     <td>@cartPosition.Game.Name</td>
                     <td>@cartPosition.PriceOfItem</td>
-                    <td>@cartPosition.Quantity</td>
-                    <td>Usuń</td>
-
-
+                    <td id="cart-position-quantity-@cartPosition.Game.Id">@cartPosition.Quantity</td>
+                    <td><a class="delete-product" data-id="@cartPosition.Game.Id" href="#">Usuń</a></td>
                 </tr>
+
             }
 
-            
+            if (Model.CartPosition.Count == 0)
+            {
+                <p id="empty-message">Twój koszyk jest pusty</p>
+            }
 
         }
 
 
-        
     </tbody>
-
-
 </table>
 
-<p>Razem @Model.TotalPrice</p>
+<p id="total-price">Razem @Model.TotalPrice</p>
+
+<script src="~/Scripts/MyJavaScript.js"></script>
 

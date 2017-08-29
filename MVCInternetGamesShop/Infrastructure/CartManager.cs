@@ -72,6 +72,7 @@ namespace MVCInternetGamesShop.Infrastructure
                 if(cartPossition.Quantity > 1)
                 {
                     cartPossition.Quantity--;
+                    return cartPossition.Quantity;
                 }
 
                 else

@@ -49,5 +49,19 @@ namespace MVCInternetGamesShop.Controllers
             int itemsInCart = cartManager.GetQuantityOfCartPossitions();
             return itemsInCart;
         }
+
+        public ActionResult DeleteFromCart(int id)
+        {
+            var currentPositionQuantity = cartManager.RemoveFromCart(id);
+            var currentTotalPrice = cartManager.GetValueOfCart();
+            var vm = new DeleteFromCartViewModel
+            {
+                CurrentPositionId = id,
+                CurrentPostionQuantity = currentPositionQuantity,
+                TotalPrice = currentTotalPrice
+
+            };
+            return Json(vm);
+        }
     }
 }
