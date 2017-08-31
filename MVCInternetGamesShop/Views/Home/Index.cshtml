@@ -24,7 +24,7 @@
                     <p>@bestseller.Name</p>
 
                     <div class="img-container-large"><a href="@Url.Action(" Details", "Games" , new { id=bestseller.Id })"><img src="@Url.PCCoversPath(bestseller.ImageName)" /></a></div>
-                    <a class="btn btn-primary" href="@Url.Action("AddToCart","Cart", new { id=bestseller.Id })">Dodaj do koszyka</a>
+                    <a class="btn btn-primary add-to-cart-js" data-id="@bestseller.Id" href="#">Dodaj do koszyka</a>
 
 
                 </li>
@@ -46,7 +46,7 @@
                 <p>@newest.Name</p>
 
                 <div class="img-container-large"><a href="@Url.Action(" Details", "Games" , new { id=newest.Id })"><img src="@Url.PCCoversPath(newest.ImageName)" /></a></div>
-                <a class="btn btn-primary" href="@Url.Action("AddToCart","Cart", new { id=newest.Id })">Dodaj do koszyka</a>
+                <a class="btn btn-primary add-to-cart-js" data-id="@newest.Id" href="#">Dodaj do koszyka</a>
 
 
             </li>
@@ -67,7 +67,7 @@
                     <p>@bestseller.Name</p>
 
                     <div class="img-container-large"><a href="@Url.Action(" Details", "Games" , new { id=bestseller.Id })"><img src="@Url.Ps4CoversPath(bestseller.ImageName)" /></a></div>
-                    <a class="btn btn-primary" href="@Url.Action("AddToCart","Cart", new { id=bestseller.Id })">Dodaj do koszyka</a>
+                    <a class="btn btn-primary add-to-cart-js" data-id="@bestseller.Id" href="#">Dodaj do koszyka</a>
 
 
                 </li>
@@ -89,7 +89,7 @@
                 <p>@newest.Name</p>
 
                 <div class="img-container-large"><a href="@Url.Action(" Details", "Games" , new { id=newest.Id })"><img src="@Url.Ps4CoversPath(newest.ImageName)" /></a></div>
-                <a class="btn btn-primary" href="@Url.Action("AddToCart","Cart", new { id=newest.Id })">Dodaj do koszyka</a>
+                <a class="btn btn-primary add-to-cart-js" data-id="@newest.Id" href="#">Dodaj do koszyka</a>
 
 
             </li>
@@ -110,7 +110,7 @@
                     <p>@bestseller.Name</p>
 
                     <div class="img-container-large"><a href="@Url.Action(" Details", "Games" , new { id=bestseller.Id })"><img src="@Url.XBoxOneCoversPath(bestseller.ImageName)" /></a></div>
-                    <a class="btn btn-primary" href="@Url.Action("AddToCart","Cart", new { id=bestseller.Id })">Dodaj do koszyka</a>
+                    <a class="btn btn-primary add-to-cart-js" data-id="@bestseller.Id" href="#">Dodaj do koszyka</a>
 
 
                 </li>
@@ -132,7 +132,7 @@
                 <p>@newest.Name</p>
 
                 <div class="img-container-large"><a href="@Url.Action(" Details", "Games" , new { id=newest.Id })"><img src="@Url.XBoxOneCoversPath(newest.ImageName)" /></a></div>
-                <a class="btn btn-primary" href="@Url.Action("AddToCart","Cart", new { id=newest.Id })">Dodaj do koszyka</a>
+                <a class="btn btn-primary add-to-cart-js" data-id="@newest.Id" href="#">Dodaj do koszyka</a>
 
 
             </li>

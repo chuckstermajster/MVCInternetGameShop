@@ -38,10 +38,10 @@ namespace MVCInternetGamesShop.Controllers
             return View(viewModel);
         }
 
-        public ActionResult AddToCart(int id)
+        public int AddToCart(int id)
         {
             cartManager.AddToCart(id);
-            return RedirectToAction("Index", "Home");
+            return GetHowManyItemsInCart();
         }
 
         public int GetHowManyItemsInCart()
@@ -54,11 +54,13 @@ namespace MVCInternetGamesShop.Controllers
         {
             var currentPositionQuantity = cartManager.RemoveFromCart(id);
             var currentTotalPrice = cartManager.GetValueOfCart();
+            var currentItemsInCartQuantity = GetHowManyItemsInCart();
             var vm = new DeleteFromCartViewModel
             {
                 CurrentPositionId = id,
                 CurrentPostionQuantity = currentPositionQuantity,
-                TotalPrice = currentTotalPrice
+                TotalPrice = currentTotalPrice,
+                CurrentItemsInCartQuantity = currentItemsInCartQuantity
 
             };
             return Json(vm);

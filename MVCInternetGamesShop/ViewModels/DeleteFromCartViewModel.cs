@@ -10,5 +10,6 @@ namespace MVCInternetGamesShop.ViewModels
         public int CurrentPositionId { get; set; }
         public int CurrentPostionQuantity { get; set; }
         public decimal TotalPrice { get; set; }
+        public int CurrentItemsInCartQuantity { get; set; }
     }
 }
