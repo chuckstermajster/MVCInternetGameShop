@@ -12,10 +12,12 @@ namespace MVCInternetGamesShop.Models
         public decimal Price { get; set; }
         public string ImageName { get; set; }
         public Platform Platform { get; set; }
-        public byte PlatformId { get; set; }
+        public byte? PlatformId { get; set; }
         public bool IsBestseller { get; set; }
         public DateTime ReleaseDate { get; set; }
         public string Description { get; set; }
+
+        public virtual ICollection<GameCategory> GameCategory { get; set; }
 
 
     }

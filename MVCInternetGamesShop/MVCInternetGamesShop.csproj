@@ -250,11 +250,29 @@
     <Compile Include="Migrations\201708132016272_DeleteDataFromGames.Designer.cs">
       <DependentUpon>201708132016272_DeleteDataFromGames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709051118312_AddCategoryPropertyToModel.cs" />
+    <Compile Include="Migrations\201709051118312_AddCategoryPropertyToModel.Designer.cs">
+      <DependentUpon>201709051118312_AddCategoryPropertyToModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709051120030_PopulateCategories.cs" />
+    <Compile Include="Migrations\201709051120030_PopulateCategories.Designer.cs">
+      <DependentUpon>201709051120030_PopulateCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709051449405_AddManyToManyGameCategories.cs" />
+    <Compile Include="Migrations\201709051449405_AddManyToManyGameCategories.Designer.cs">
+      <DependentUpon>201709051449405_AddManyToManyGameCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709062015185_Test.cs" />
+    <Compile Include="Migrations\201709062015185_Test.Designer.cs">
+      <DependentUpon>201709062015185_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\CartPosition.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\GameCategory.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
@@ -265,6 +283,7 @@
     <Compile Include="ViewModels\AddToCartViewModel.cs" />
     <Compile Include="ViewModels\CartViewModel.cs" />
     <Compile Include="ViewModels\DeleteFromCartViewModel.cs" />
+    <Compile Include="ViewModels\GameFormViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\PlatformViewModel.cs" />
   </ItemGroup>
@@ -343,6 +362,7 @@
     <Content Include="Views\Games\Details.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Home\Platform.cshtml" />
+    <Content Include="Views\Games\GameForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\GameCovers\XBOXONE\" />
@@ -407,6 +427,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708132016272_DeleteDataFromGames.resx">
       <DependentUpon>201708132016272_DeleteDataFromGames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709051118312_AddCategoryPropertyToModel.resx">
+      <DependentUpon>201709051118312_AddCategoryPropertyToModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709051120030_PopulateCategories.resx">
+      <DependentUpon>201709051120030_PopulateCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709051449405_AddManyToManyGameCategories.resx">
+      <DependentUpon>201709051449405_AddManyToManyGameCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709062015185_Test.resx">
+      <DependentUpon>201709062015185_Test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

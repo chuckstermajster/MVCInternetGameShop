@@ -37,6 +37,9 @@ namespace MVCInternetGamesShop.Models
         public DbSet<CartPosition> CartPossitions { get; set; }
         public DbSet<Platform> Platforms { get; set; }
         public DbSet<OrderPosition> OrderPositons { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<GameCategory> GameCategorys { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
