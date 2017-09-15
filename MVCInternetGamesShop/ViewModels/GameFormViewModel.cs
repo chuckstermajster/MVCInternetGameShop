@@ -19,6 +19,13 @@ namespace MVCInternetGamesShop.ViewModels
         public string Description { get; set; }        
         public List<Category> Category { get; set; }
         public List<byte> CategoryId { get; set; }
+        public List<Category> CurrentCategories { get; set; }
+        public List<Category> RemainsCategories { get; set; }
+        public List<int> SelectedIds { get; set; }
+        public string CurrentCategoriesNames { get; set; }
+
+
+       
 
 
 
@@ -39,5 +46,7 @@ namespace MVCInternetGamesShop.ViewModels
         }
 
         
+
+
     }
 }

@@ -16,6 +16,7 @@
         <h1>Bestsellery - PC</h1>
         <ul class="list-inline">
             @foreach (var bestseller in Model.PCBestsellers)
+                
             {
 
                 <li>
@@ -133,36 +134,8 @@
 
                 <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=newest.Id })"><img src="@Url.XBoxOneCoversPath(newest.ImageName)" /></a></div>
                 <a class="btn btn-primary add-to-cart-js" data-id="@newest.Id" href="#">Dodaj do koszyka</a>
-
-
             </li>
-
         }
     </ul>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

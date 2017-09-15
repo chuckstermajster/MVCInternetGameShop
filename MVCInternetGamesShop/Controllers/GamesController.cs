@@ -30,17 +30,24 @@ namespace MVCInternetGamesShop.Controllers
         {
             var game = _context.Games.SingleOrDefault(g => g.Id == id);
             var category = _context.Categories.ToList();
-            var categoryId = _context.Categories.Select(x => x.Id).ToList();
-            var platformId = _context.Platforms.Select(x => x.Id).ToList();
+            var categoryId = _context.Categories.Select(c => c.Id).ToList();
+            var platformId = _context.Platforms.Select(p => p.Id).ToList();
             var platform = _context.Platforms.ToList();
+            var currentCategoriesId = _context.GameCategorys.Where(gc => gc.GameID == id).Select(gc => gc.CategoryID).ToList();
+            var currentCategories = category.Where(t => currentCategoriesId.Contains(t.Id)).ToList();
+            var remainsCategories = category.Except(currentCategories).ToList();
+            var currentCategoriesNames = string.Join(",", currentCategories.Select(c => c.Name).ToList());
+
 
             GameFormViewModel vm = new GameFormViewModel(game)
             {
                 Category = category,
                 CategoryId = categoryId,
                 PlatformId = platformId,
-                Platforms = platform              
-                
+                Platforms = platform,
+                CurrentCategories = currentCategories,
+                RemainsCategories = remainsCategories,
+                CurrentCategoriesNames = currentCategoriesNames
 
             };
 
@@ -66,31 +73,52 @@ namespace MVCInternetGamesShop.Controllers
             return View("GameForm", vm);
         }
 
-        public ActionResult Save(Game game, byte categoryId)
+        public ActionResult Save(Game game, List<int> selectedIds)
         {
             if (!ModelState.IsValid)
             {
                 return RedirectToAction("New", "Games");
             }
-
+            
             else
             {
                 var gameInDb = _context.Games.Single(g => g.Id == game.Id);
                 
-                var gameCategories = new GameCategory
-                {
-                    CategoryID = categoryId,
-                    GameID = gameInDb.Id
-                };
-                _context.GameCategorys.Add(gameCategories);
-                gameInDb.Name = game.Name;
-
+                var gameCategoriesToAdd = new List<GameCategory>();
                 
+                foreach( var chosenCategoryId in selectedIds)
+                {
+                    var gameCategory = new GameCategory
+                    {
+                        GameID = gameInDb.Id,
+                        CategoryID = chosenCategoryId
+
+                    };
+                    _context.GameCategorys.Add(gameCategory);
+                }
+                
+                
+
+
                 _context.SaveChanges();
             }
             return View();
         }
 
+        public ActionResult GetCurrentCategoriesIds(int gameId) 
+        {
+            var CurrentgameId = gameId;
+            var currentCategoriesId = _context.GameCategorys.Where(gc => gc.GameID == gameId).Select(gc => gc.CategoryID).ToList();
 
+            return Json(new
+            {
+                GameId = CurrentgameId,
+                CurrentCategoriesId = currentCategoriesId
+            }, JsonRequestBehavior.AllowGet);
+        }
     }
+
+
+
+
 }

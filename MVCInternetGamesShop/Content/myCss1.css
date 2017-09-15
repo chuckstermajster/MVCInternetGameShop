@@ -1,8 +1,4 @@
 ﻿
-
-
-
-
 .button {
     display: block;
 }
@@ -29,6 +25,10 @@ img {
 .img-container-small {
     height: 100px;
     width: 100px;
+}
+
+#test {
+    width: 400px;
 }
 
 

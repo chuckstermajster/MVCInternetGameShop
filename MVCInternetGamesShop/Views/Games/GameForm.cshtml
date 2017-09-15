@@ -1,48 +1,68 @@
 ﻿@model MVCInternetGamesShop.ViewModels.GameFormViewModel
+
 @{
     ViewBag.Title = "GameForm";
 }
 
 <h2>GameForm</h2>
 @using (Html.BeginForm("Save", "Games"))
-{ 
-<div class="form-group">
-    @Html.LabelFor(m => m.Name)
-    @Html.TextBoxFor(m => m.Name)
-</div>
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)
+    </div>
 
-<div class="form-group">
-    @Html.LabelFor(m => m.Price)
-    @Html.TextBoxFor(m => m.Price)
-</div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Price)
+        @Html.TextBoxFor(m => m.Price)
+    </div>
 
-<div class="form-group">
-    @Html.LabelFor(m => m.ImageName)
-    @Html.TextBoxFor(m => m.ImageName)
-</div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ImageName)
+        @Html.TextBoxFor(m => m.ImageName)
+    </div>
 
-<div class="form-group">
-    @Html.LabelFor(m => m.PlatformId)
-    @Html.DropDownListFor(m => m.PlatformId, new SelectList(Model.Platforms, "Id", "Name"))
-</div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.PlatformId)
+        @Html.DropDownListFor(m => m.PlatformId, new SelectList(Model.Platforms, "Id", "Name"))
+    </div>
 
-<div class="form-group">
-    @Html.LabelFor(m => m.IsBestseller)
-    @Html.CheckBoxFor(m => m.IsBestseller)
-</div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.IsBestseller)
+        @Html.CheckBoxFor(m => m.IsBestseller)
+    </div>
 
-<div class="form-group">
-    @Html.LabelFor(m => m.ReleaseDate)
-    @Html.TextBoxFor(m => m.ReleaseDate)
-</div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ReleaseDate)
+        @Html.TextBoxFor(m => m.ReleaseDate)
+    </div>
 
-<div class="form-group">
+    <div class="form-group">
+        @Html.LabelFor(m => m.CurrentCategoriesNames)
+        @Html.TextBoxFor(m => m.CurrentCategoriesNames, new { @readonly = true } )
+    </div>
 
-    @Html.LabelFor(m => m.CategoryId)
-    @Html.DropDownListFor(m => m.CategoryId, new SelectList(Model.Category, "Id", "Name"))
+    //<div class="form-group">
+     //   @Html.LabelFor(m => m.RemainsCategories)
+      //  @Html.DropDownListFor(m => m.SelectedIds, new MultiSelectList(Model.RemainsCategories, "Id", "Name"), "", new { @class = "test", multiple = "multiple" })
+   // </div>
 
     @Html.HiddenFor(m => m.Id)
-
-</div>
     <button type="submit">Save</button>
+
+    <div class="form-group">
+        <label for="CurrentCategories">Przypisane Kategorie</label>
+        <select class="test2" id="test" multiple="multiple" name="SelectedIds">
+            <option value=""></option>
+            @foreach (var category in Model.Category)
+            {
+            <option id="option-@category.Id" value="@category.Id">@category.Name</option>
+            }
+        </select>
+    </div>
+
 }
+<div class="hidden" id="game-id-for-js" data-id="@Model.Id"></div>
+
+
+
