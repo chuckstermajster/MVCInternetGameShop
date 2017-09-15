@@ -15,8 +15,9 @@
         
         var dataToDeleteString = e.params.data.id;
         var dataToDelete = parseInt(dataToDeleteString);
-        alert(dataToDelete);
+        
         IsCategoryExistsInDb(dataToDelete, listOfCurrentCategories);
+        alert(dataToDelete);
 
     });    
     $('#test').on("select2:select", function (e) {
