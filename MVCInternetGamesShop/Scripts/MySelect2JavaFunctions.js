@@ -1,10 +1,11 @@
 ﻿$(document).ready(function () {    
     var GameId = $('#game-id-for-js').attr("data-id");
     var listOfCurrentCategories = getCurrentListOfCategoriesIds(GameId);
+    alert(GameId);
     
     
 
-    alert(listOfCurrentCategories);
+    
         
    
     
