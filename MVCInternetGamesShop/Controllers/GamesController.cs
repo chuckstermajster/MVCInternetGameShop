@@ -79,14 +79,14 @@ namespace MVCInternetGamesShop.Controllers
             {
                 return RedirectToAction("New", "Games");
             }
-            
+
             else
             {
                 var gameInDb = _context.Games.Single(g => g.Id == game.Id);
-                
+
                 var gameCategoriesToAdd = new List<GameCategory>();
-                
-                foreach( var chosenCategoryId in selectedIds)
+
+                foreach (var chosenCategoryId in selectedIds)
                 {
                     var gameCategory = new GameCategory
                     {
@@ -96,8 +96,8 @@ namespace MVCInternetGamesShop.Controllers
                     };
                     _context.GameCategorys.Add(gameCategory);
                 }
-                
-                
+
+
 
 
                 _context.SaveChanges();
@@ -105,7 +105,7 @@ namespace MVCInternetGamesShop.Controllers
             return View();
         }
 
-        public ActionResult GetCurrentCategoriesIds(int gameId) 
+        public ActionResult GetCurrentCategoriesIds(int gameId)
         {
             var CurrentgameId = gameId;
             var currentCategoriesId = _context.GameCategorys.Where(gc => gc.GameID == gameId).Select(gc => gc.CategoryID).ToList();
@@ -115,6 +115,32 @@ namespace MVCInternetGamesShop.Controllers
                 GameId = CurrentgameId,
                 CurrentCategoriesId = currentCategoriesId
             }, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public ActionResult deleteCategoryFromDatabase(GameCategory gameCategory)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HttpNotFound();
+            }
+
+            else
+            {
+                var gameCategoriesInDb = _context.GameCategorys.ToList();          
+                
+                gameCategoriesInDb.Remove(gameCategory);
+                var currentCategoriesId = _context.GameCategorys.Where(gc => gc.GameID == gameCategory.GameID).Select(gc => gc.CategoryID).ToList();
+
+
+                var result = currentCategoriesId[0];
+
+
+
+
+
+
+                return Json(result);
+            }
         }
     }
 

@@ -1,23 +1,24 @@
-﻿$(document).ready(function () {    
+﻿GameCategory = function (gameId, categoryId) {
+    this.GameID = gameId;
+    this.CategoryID = categoryId;
+}
+$(document).ready(function () {
     var GameId = $('#game-id-for-js').attr("data-id");
     var listOfCurrentCategories = getCurrentListOfCategoriesIds(GameId);
-    alert(GameId);
-    
-    
-
-    
-        
-   
     
     $('#test').on("select2:unselect", function (e) {       
-        
-        
-        
         var dataToDeleteString = e.params.data.id;
-        var dataToDelete = parseInt(dataToDeleteString);
+        var dataToDelete = parseInt(dataToDeleteString);        
+        if (IsCategoryExistsInDb(dataToDelete, listOfCurrentCategories)) {
+            deleteCategoryFormDatabase(GameId, dataToDelete);
+            //listOfCurrentCategories = listOfCurrentCategories.filter(c => c !== dataToDelete);
+            //alert(listOfCurrentCategories);
+        }
+        else {
+            alert(listOfCurrentCategories);
+            alert("kategorii, którą chcesz usunąć nie ma w bazie!");
+        }
         
-        IsCategoryExistsInDb(dataToDelete, listOfCurrentCategories);
-        alert(dataToDelete);
 
     });    
     $('#test').on("select2:select", function (e) {
@@ -35,7 +36,7 @@ IsCategoryExistsInDb = function (categoryId, CategorysInDb) {
             found = true;
             break;        }
     }
-    console.log(found);
+    return found;
 };
 
 getCurrentListOfCategoriesIds = function (GameId) {
@@ -66,7 +67,19 @@ getCurrentListOfCategoriesIds = function (GameId) {
 
 
 deleteCategoryFormDatabase = function (gameId, deletedCategoryId) {
-    alert("usunięto Id = " + deletedCategoryId);
+    //alert("usunięto Id = " + deletedCategoryId);
+    gameCategory = new GameCategory(gameId, deletedCategoryId);
+    $.ajax({
+        type: 'POST',
+        url: "/Games/deleteCategoryFromDatabase/",
+        data: gameCategory,
+        success: function (response) {
+            alert(response + "jjaja");
+        },
+        error: function (n) {
+            alert("coś nie tak ajax post")
+        }
+    })
 };
 
 addCategoryToDatabase = function (gameId, addedCategoryId) {
