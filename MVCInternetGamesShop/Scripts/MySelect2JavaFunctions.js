@@ -15,7 +15,7 @@ $(document).ready(function () {
             //alert(listOfCurrentCategories);
         }
         else {
-            alert(listOfCurrentCategories);
+            
             alert("kategorii, którą chcesz usunąć nie ma w bazie!");
         }
         
@@ -51,7 +51,7 @@ getCurrentListOfCategoriesIds = function (GameId) {
             
         },
         error: function (n) {
-            alert("błąd ajax")
+           // alert("błąd ajax")
         },
 
         complete: function (data) {
@@ -74,7 +74,7 @@ deleteCategoryFormDatabase = function (gameId, deletedCategoryId) {
         url: "/Games/deleteCategoryFromDatabase/",
         data: gameCategory,
         success: function (response) {
-            alert(response + "jjaja");
+            alert(response + "usunięto z bazy danych");
         },
         error: function (n) {
             alert("coś nie tak ajax post")

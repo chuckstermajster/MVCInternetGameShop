@@ -126,13 +126,16 @@ namespace MVCInternetGamesShop.Controllers
 
             else
             {
-                var gameCategoriesInDb = _context.GameCategorys.ToList();          
+                var gameCategoriesInDb = _context.GameCategorys;
+                _context.Entry(gameCategory).State = EntityState.Deleted;
                 
-                gameCategoriesInDb.Remove(gameCategory);
+
+                gameCategoriesInDb.Remove(gameCategory);                
+                _context.SaveChanges();
                 var currentCategoriesId = _context.GameCategorys.Where(gc => gc.GameID == gameCategory.GameID).Select(gc => gc.CategoryID).ToList();
+                
 
-
-                var result = currentCategoriesId[0];
+                var result = "działą";
 
 
 
