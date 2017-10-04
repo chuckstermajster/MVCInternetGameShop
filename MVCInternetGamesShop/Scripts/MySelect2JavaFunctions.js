@@ -3,28 +3,30 @@
     this.CategoryID = categoryId;
 }
 $(document).ready(function () {
+    $(window).on('popstate', function () {
+        listOfCurrentCategories = getCurrentListOfCategoriesIds(GameId);
+        $("#test").select2(
+             ).val(listOfCurrentCategories).change();
+    });
     var GameId = $('#game-id-for-js').attr("data-id");
     var listOfCurrentCategories = getCurrentListOfCategoriesIds(GameId);
     
-    $('#test').on("select2:unselect", function (e) {       
+    $('#test').on("select2:unselect", function (e) {
+        
         var dataToDeleteString = e.params.data.id;
-        var dataToDelete = parseInt(dataToDeleteString);        
-        if (IsCategoryExistsInDb(dataToDelete, listOfCurrentCategories)) {
-            deleteCategoryFormDatabase(GameId, dataToDelete);
-            //listOfCurrentCategories = listOfCurrentCategories.filter(c => c !== dataToDelete);
-            //alert(listOfCurrentCategories);
-        }
-        else {
+        var dataToDelete = parseInt(dataToDeleteString);    
+       
+        deleteCategoryFormDatabase(GameId, dataToDelete);
             
-            alert("kategorii, którą chcesz usunąć nie ma w bazie!");
-        }
+        
+      
         
 
     });    
     $('#test').on("select2:select", function (e) {
-        var categoryIdToAdd = e.params.data.id;
-        
-        console.log(e);
+        var IdToAddString = e.params.data.id;
+        var IdToAdd = parseInt(IdToAddString);
+        addCategoryToDatabase(GameId, IdToAdd);
         
     });    
 });
@@ -48,7 +50,7 @@ getCurrentListOfCategoriesIds = function (GameId) {
         data: { 'gameId': GameId },
         success: function (response) {
             responseFromServer = response.CurrentCategoriesId;
-            
+            listOfCurrentCategories = responseFromServer;
         },
         error: function (n) {
            // alert("błąd ajax")
@@ -67,23 +69,38 @@ getCurrentListOfCategoriesIds = function (GameId) {
 
 
 deleteCategoryFormDatabase = function (gameId, deletedCategoryId) {
-    //alert("usunięto Id = " + deletedCategoryId);
+    
     gameCategory = new GameCategory(gameId, deletedCategoryId);
     $.ajax({
         type: 'POST',
         url: "/Games/deleteCategoryFromDatabase/",
         data: gameCategory,
         success: function (response) {
-            alert(response + "usunięto z bazy danych");
+            listOfCurrentCategories = response;
+            console.log(listOfCurrentCategories);
         },
         error: function (n) {
             alert("coś nie tak ajax post")
         }
-    })
+    });
 };
 
 addCategoryToDatabase = function (gameId, addedCategoryId) {
-    alert("dodano Id = " + addedCategoryId);
+    gameCategory = new GameCategory(gameId, addedCategoryId);
+    $.ajax({
+        type: 'POST',
+        url: "/Games/AddCategoryToDatabase/",
+        data: gameCategory,
+        success: function (response) {
+            listOfCurrentCategories = response;
+        },
+        error: function (e) {
+            alert("coś poszło nie tak")
+        }
+
+    });
+
+    
 };
     
 

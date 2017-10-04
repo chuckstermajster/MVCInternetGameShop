@@ -128,23 +128,34 @@ namespace MVCInternetGamesShop.Controllers
             {
                 var gameCategoriesInDb = _context.GameCategorys;
                 _context.Entry(gameCategory).State = EntityState.Deleted;
-                
 
-                gameCategoriesInDb.Remove(gameCategory);                
+
+                gameCategoriesInDb.Remove(gameCategory);
                 _context.SaveChanges();
                 var currentCategoriesId = _context.GameCategorys.Where(gc => gc.GameID == gameCategory.GameID).Select(gc => gc.CategoryID).ToList();
-                
-
-                var result = "działą";
-
-
-
-
-
-
-                return Json(result);
+                return Json(currentCategoriesId);
             }
         }
+
+        public ActionResult AddCategoryToDatabase(GameCategory gameCategory)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HttpNotFound();
+            }
+
+            else
+            {
+                var categoriesInDb = _context.GameCategorys;
+                categoriesInDb.Add(gameCategory);
+                _context.Entry(gameCategory).State = EntityState.Added;
+                _context.SaveChanges();
+                var currentCategoriesId = _context.GameCategorys.Where(gc => gc.GameID == gameCategory.GameID).Select(gc => gc.CategoryID).ToList();
+                return Json(currentCategoriesId);
+            }
+            
+        }
+
     }
 
 
