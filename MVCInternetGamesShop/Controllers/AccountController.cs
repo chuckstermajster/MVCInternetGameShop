@@ -155,7 +155,11 @@ namespace MVCInternetGamesShop.Controllers
                     UserName = model.Email,
                     Email = model.Email,
                     Name = model.Name,
-                    Address = model.Address
+                    City = model.City,
+                    Street = model.Street,
+                    StreetNumber = model.StreetNumber,
+                    HouseNumber = model.HouseNumber,
+                    PostCode = model.PostCode
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

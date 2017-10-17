@@ -80,7 +80,19 @@ namespace MVCInternetGamesShop.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        public Address Address { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        public string City { get; set; }
+
+
+        public string Street { get; set; }
+
+
+        public int? StreetNumber { get; set; }
+
+        public int? HouseNumber { get; set; }
+
+
+        public string PostCode { get; set; }
         public string Name { get; set; }
     }
 

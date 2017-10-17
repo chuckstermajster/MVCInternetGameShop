@@ -100,9 +100,30 @@ namespace MVCInternetGamesShop.Infrastructure
         {
             var cart = GetCart();
             order.CreationTime = DateTime.Now;
-            //order.UserId = userId;
+            order.UserId = userId;
             _context.Orders.Add(order);
-            //POZYCJE ZAMOWiENIA
+
+            if (order.OrderPositions == null)
+            {
+                order.OrderPositions = new List<OrderPosition>();
+            }
+
+                decimal cartValue = 0;
+            foreach(var element in cart)
+            {
+                var newOrderPosition = new OrderPosition()
+                {
+                    GameId = element.Game.Id,
+                    Quantity = element.Quantity,
+                    TotalPrice = element.Game.Price
+                };
+
+                cartValue += (element.Quantity * element.PriceOfItem);
+                order.OrderPositions.Add(newOrderPosition);
+            }
+
+            
+            
             return order;
         }
 

@@ -266,6 +266,18 @@
     <Compile Include="Migrations\201709062015185_Test.Designer.cs">
       <DependentUpon>201709062015185_Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710161046557_EditOrder.cs" />
+    <Compile Include="Migrations\201710161046557_EditOrder.Designer.cs">
+      <DependentUpon>201710161046557_EditOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161125373_EditOrderDeleteAddress.cs" />
+    <Compile Include="Migrations\201710161125373_EditOrderDeleteAddress.Designer.cs">
+      <DependentUpon>201710161125373_EditOrderDeleteAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161213130_UpdateUserIdentity.cs" />
+    <Compile Include="Migrations\201710161213130_UpdateUserIdentity.Designer.cs">
+      <DependentUpon>201710161213130_UpdateUserIdentity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -417,6 +429,8 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Home\Platform.cshtml" />
     <Content Include="Views\Games\GameForm.cshtml" />
+    <Content Include="Views\Cart\Pay.cshtml" />
+    <Content Include="Views\Cart\OrderConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\GameCovers\XBOXONE\" />
@@ -493,6 +507,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709062015185_Test.resx">
       <DependentUpon>201709062015185_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161046557_EditOrder.resx">
+      <DependentUpon>201710161046557_EditOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161125373_EditOrderDeleteAddress.resx">
+      <DependentUpon>201710161125373_EditOrderDeleteAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161213130_UpdateUserIdentity.resx">
+      <DependentUpon>201710161213130_UpdateUserIdentity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

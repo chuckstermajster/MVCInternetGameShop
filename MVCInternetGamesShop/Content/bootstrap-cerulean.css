@@ -4215,6 +4215,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-fixed-bottom .navbar-collapse {
     padding-left: 0;
     padding-right: 0;
+
   }
 }
 .navbar-fixed-top .navbar-collapse,
@@ -4386,7 +4387,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-form .form-control {
     display: inline-block;
-    width: auto;
+    
     vertical-align: middle;
   }
   .navbar-form .form-control-static {

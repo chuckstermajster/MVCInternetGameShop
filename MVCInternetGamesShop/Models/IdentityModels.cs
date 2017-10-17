@@ -4,15 +4,30 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using MVCInternetGamesShop.Infrastructure;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVCInternetGamesShop.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-
+        public virtual ICollection<Order> Orders { get; set; }
         public string Name { get; set; }
-        public Address Address { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        public string City { get; set; }
+
+
+        public string Street { get; set; }
+
+
+        public int? StreetNumber { get; set; }
+
+        public int? HouseNumber { get; set; }
+
+
+        public string PostCode { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
