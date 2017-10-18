@@ -1,18 +1,36 @@
 ﻿//AJAX Removeing from cart without reloading
 
 $(function () {
+    $.post("/Cart/GetHowManyItemsInCart", function (data) {
+        
+        if (data == 0) {
+            $('#pay-button').css("pointer-events", "none");
+            
+        }
+    
+
+    });
+    
+
     $('.delete-product').click(function () {
         
         var recordToDelete = $(this).attr('data-id');
         if (recordToDelete != '') {
             $.post("/Cart/DeleteFromCart", { "id": recordToDelete },
                 function (response) {
+                    if (response.CurrentItemsInCartQuantity === 0) {
+                        $('#pay-button').css("pointer-events", "none");
+                    }
                     
-                    if (response.CurrentPostionQuantity == 0) {
+                        
+                    
+                    
+                    if (response.CurrentPostionQuantity === 0) {
                         $('#delete-row-js-' + response.CurrentPositionId).fadeOut('slow');                             
                         $('#total-price').text("Razem: " + response.TotalPrice);                        
-                        $('#items-quantity-js').text("Koszyk (" + response.CurrentItemsInCartQuantity + ")");                  
-
+                        $('#items-quantity-js').text("Koszyk (" + response.CurrentItemsInCartQuantity + ")");
+                        
+                        
                         
                     }
                     else {

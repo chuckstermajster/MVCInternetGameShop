@@ -8,10 +8,19 @@ namespace MVCInternetGamesShop
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/CartManagment").Include(
+                "~/Scripts/AjaxCartManager.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/EditCategoryScripts").Include(
+                "~/Scripts/select2.js",
+                "~/Scripts/MySelect2JavaFunctions.js"
+                ));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/select2.js",
-                        "~/Scripts/MySelect2JavaFunctions.js"
+                        "~/Scripts/jquery-{version}.js"
+                        
+
 
                         ));
 
@@ -25,11 +34,11 @@ namespace MVCInternetGamesShop
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/AjaxCartManager.js",
+                      
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-cerulean.css",
+                      "~/Content/bootstrap-cyborg.css",
                       "~/Content/css/select2.css",
                       "~/Content/myCss1.css"));
         }
