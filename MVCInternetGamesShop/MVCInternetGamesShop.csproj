@@ -278,6 +278,18 @@
     <Compile Include="Migrations\201710161213130_UpdateUserIdentity.Designer.cs">
       <DependentUpon>201710161213130_UpdateUserIdentity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710201332509_AddDataAnnotationsToOrder.cs" />
+    <Compile Include="Migrations\201710201332509_AddDataAnnotationsToOrder.Designer.cs">
+      <DependentUpon>201710201332509_AddDataAnnotationsToOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710201341261_AddAnnotationToApplicationUser.cs" />
+    <Compile Include="Migrations\201710201341261_AddAnnotationToApplicationUser.Designer.cs">
+      <DependentUpon>201710201341261_AddAnnotationToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710201428362_AddPropertyTotalValueToOrder.cs" />
+    <Compile Include="Migrations\201710201428362_AddPropertyTotalValueToOrder.Designer.cs">
+      <DependentUpon>201710201428362_AddPropertyTotalValueToOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -429,7 +441,7 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Home\Platform.cshtml" />
     <Content Include="Views\Games\GameForm.cshtml" />
-    <Content Include="Views\Cart\Pay.cshtml" />
+    <Content Include="Views\Cart\Order.cshtml" />
     <Content Include="Views\Cart\OrderConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -516,6 +528,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710161213130_UpdateUserIdentity.resx">
       <DependentUpon>201710161213130_UpdateUserIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710201332509_AddDataAnnotationsToOrder.resx">
+      <DependentUpon>201710201332509_AddDataAnnotationsToOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710201341261_AddAnnotationToApplicationUser.resx">
+      <DependentUpon>201710201341261_AddAnnotationToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710201428362_AddPropertyTotalValueToOrder.resx">
+      <DependentUpon>201710201428362_AddPropertyTotalValueToOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

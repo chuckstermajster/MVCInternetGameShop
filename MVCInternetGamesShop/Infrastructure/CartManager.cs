@@ -115,10 +115,11 @@ namespace MVCInternetGamesShop.Infrastructure
                 {
                     GameId = element.Game.Id,
                     Quantity = element.Quantity,
-                    TotalPrice = element.Game.Price
+                    TotalPrice = element.Game.Price*element.Quantity
                 };
 
                 cartValue += (element.Quantity * element.PriceOfItem);
+                order.TotalValue = cartValue;
                 order.OrderPositions.Add(newOrderPosition);
             }
 

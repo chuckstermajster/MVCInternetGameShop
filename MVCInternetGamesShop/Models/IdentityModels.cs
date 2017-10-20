@@ -18,15 +18,15 @@ namespace MVCInternetGamesShop.Models
         [Required(ErrorMessage = "To pole jest wymagane")]
         public string City { get; set; }
 
-
+        [Required(ErrorMessage = "To pole jest wymagane")]
         public string Street { get; set; }
 
-
-        public int? StreetNumber { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        public int StreetNumber { get; set; }
 
         public int? HouseNumber { get; set; }
 
-
+        [Required(ErrorMessage = "To pole jest wymagane")]
         public string PostCode { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

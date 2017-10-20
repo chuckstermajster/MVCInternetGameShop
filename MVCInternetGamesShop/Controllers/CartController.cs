@@ -80,7 +80,7 @@ namespace MVCInternetGamesShop.Controllers
             return Json(vm);
         }
 
-        public async Task<ActionResult> Pay()
+        public async Task<ActionResult> Order()
         {
             if (Request.IsAuthenticated)
             {
@@ -88,7 +88,12 @@ namespace MVCInternetGamesShop.Controllers
                 var order = new Order
                 {
                     Name = user.Name,
+                    City = user.City,
                     Street = user.Street,
+                    StreetNumber = user.StreetNumber,
+                    PostCode = user.PostCode,
+                    HouseNumber = user.HouseNumber
+
                     
                  
                 };
@@ -99,7 +104,7 @@ namespace MVCInternetGamesShop.Controllers
 
             else
             {
-                return RedirectToAction("Login", "Account",  new { returnUrl = Url.Action("Pay", "Cart") });
+                return RedirectToAction("Login", "Account",  new { returnUrl = Url.Action("Order", "Cart") });
             }
         }
 
