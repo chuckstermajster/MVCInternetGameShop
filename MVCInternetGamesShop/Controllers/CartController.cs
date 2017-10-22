@@ -80,7 +80,7 @@ namespace MVCInternetGamesShop.Controllers
             return Json(vm);
         }
 
-        public async Task<ActionResult> Order()
+        public async Task<ActionResult> Confirm()
         {
             if (Request.IsAuthenticated)
             {
@@ -104,10 +104,10 @@ namespace MVCInternetGamesShop.Controllers
 
             else
             {
-                return RedirectToAction("Login", "Account",  new { returnUrl = Url.Action("Order", "Cart") });
+                return RedirectToAction("Login", "Account",  new { returnUrl = Url.Action("Confirm", "Cart") });
             }
         }
-
+        [HttpPost]
         public async Task<ActionResult> Confirm(Order order)
         {
             if (ModelState.IsValid)
@@ -126,6 +126,7 @@ namespace MVCInternetGamesShop.Controllers
                 user.HouseNumber = order.HouseNumber;
                 user.PostCode = order.PostCode;
                 user.Name = order.Name;
+                
                await _context.SaveChangesAsync();
 
 

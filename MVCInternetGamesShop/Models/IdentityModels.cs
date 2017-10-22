@@ -14,6 +14,9 @@ namespace MVCInternetGamesShop.Models
     public class ApplicationUser : IdentityUser
     {
         public virtual ICollection<Order> Orders { get; set; }
+
+        
+
         public string Name { get; set; }
         [Required(ErrorMessage = "To pole jest wymagane")]
         public string City { get; set; }

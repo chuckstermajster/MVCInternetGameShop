@@ -1,4 +1,6 @@
-﻿using MVCInternetGamesShop.Models;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using MVCInternetGamesShop.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,11 +13,11 @@ namespace MVCInternetGamesShop.Infrastructure
     {
         protected override void Seed(ApplicationDbContext context)
         {
-            SeedData(context);
+            SeedData(context);            
             base.Seed(context);
         }
 
-        private void SeedData(ApplicationDbContext context)
+        private static void SeedData(ApplicationDbContext context)
         {
             var games = new List<Game>
             {
@@ -45,6 +47,10 @@ namespace MVCInternetGamesShop.Infrastructure
                 context.Games.Add(game);
                 context.SaveChanges();                
             }
-        }
+        }     
+            
+
+
+        
     }
 }

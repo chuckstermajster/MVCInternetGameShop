@@ -290,6 +290,18 @@
     <Compile Include="Migrations\201710201428362_AddPropertyTotalValueToOrder.Designer.cs">
       <DependentUpon>201710201428362_AddPropertyTotalValueToOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710221555327_AddUserIdFieldToApplicationUser.cs" />
+    <Compile Include="Migrations\201710221555327_AddUserIdFieldToApplicationUser.Designer.cs">
+      <DependentUpon>201710221555327_AddUserIdFieldToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710221605279_RemoveUserIdFromApplicationUser.cs" />
+    <Compile Include="Migrations\201710221605279_RemoveUserIdFromApplicationUser.Designer.cs">
+      <DependentUpon>201710221605279_RemoveUserIdFromApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710221657068_SeedUsersAndRoles.cs" />
+    <Compile Include="Migrations\201710221657068_SeedUsersAndRoles.Designer.cs">
+      <DependentUpon>201710221657068_SeedUsersAndRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -441,7 +453,7 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Home\Platform.cshtml" />
     <Content Include="Views\Games\GameForm.cshtml" />
-    <Content Include="Views\Cart\Order.cshtml" />
+    <Content Include="Views\Cart\Confirm.cshtml" />
     <Content Include="Views\Cart\OrderConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -537,6 +549,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710201428362_AddPropertyTotalValueToOrder.resx">
       <DependentUpon>201710201428362_AddPropertyTotalValueToOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710221555327_AddUserIdFieldToApplicationUser.resx">
+      <DependentUpon>201710221555327_AddUserIdFieldToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710221605279_RemoveUserIdFromApplicationUser.resx">
+      <DependentUpon>201710221605279_RemoveUserIdFromApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710221657068_SeedUsersAndRoles.resx">
+      <DependentUpon>201710221657068_SeedUsersAndRoles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
