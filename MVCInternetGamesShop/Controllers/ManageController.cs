@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MVCInternetGamesShop.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace MVCInternetGamesShop.Controllers
 {
@@ -73,6 +74,61 @@ namespace MVCInternetGamesShop.Controllers
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
             return View(model);
+        }
+
+        public async Task<ActionResult> ChangeUserData()
+        {
+            if (Request.IsAuthenticated)
+            {
+                var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+                var vm = new ChangeUserDataViewModel
+                {
+                    Name = user.Name,
+                    City = user.City,
+                    Street = user.Street,
+                    StreetNumber = user.StreetNumber,
+                    PostCode = user.PostCode,
+                    HouseNumber = user.HouseNumber,
+
+                };
+
+                return View(vm);
+            }
+
+
+
+            else
+            {
+                return RedirectToAction("Login", "Account", new { returnUrl = Url.Action("ChangeUserData", "Manage") });
+            }
+            
+        }
+        [HttpPost]
+        public async Task<ActionResult> ChangeUserData(ChangeUserDataViewModel model)
+        {
+
+            
+        
+            if (ModelState.IsValid) 
+            {
+
+                var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+                
+                user.Name = model.Name;
+                user.City = model.City;
+                user.Street = model.Street;
+                user.StreetNumber = model.StreetNumber;
+                user.PostCode = model.PostCode;
+                IdentityResult result = await UserManager.UpdateAsync(user);
+
+
+                return View("ChangeProfileDataConfirmation");
+
+
+            }
+
+            return View("aaaaa");
+            
         }
 
         //

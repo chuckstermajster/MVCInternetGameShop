@@ -78,6 +78,34 @@ namespace MVCInternetGamesShop.Models
         public string PhoneNumber { get; set; }
     }
 
+    public class ChangeUserDataViewModel
+    {
+        
+
+        [Display(Name = "Miasto")]
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        public string City { get; set; }
+
+        [Display(Name = "Ulica")]
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        public string Street { get; set; }
+
+        [Display(Name = "Numer ulicy")]
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        public int StreetNumber { get; set; }
+
+        [Display(Name = "Numer lokalu")]
+        public int? HouseNumber { get; set; }
+
+        [Display(Name = "Kod pocztowy")]
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        public string PostCode { get; set; }
+
+        [Display(Name = "Imię")]
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        public string Name { get; set; }
+    }
+
     public class ConfigureTwoFactorViewModel
     {
         public string SelectedProvider { get; set; }

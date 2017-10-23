@@ -455,6 +455,8 @@
     <Content Include="Views\Games\GameForm.cshtml" />
     <Content Include="Views\Cart\Confirm.cshtml" />
     <Content Include="Views\Cart\OrderConfirmation.cshtml" />
+    <Content Include="Views\Manage\ChangeUserData.cshtml" />
+    <Content Include="Views\Manage\ChangeProfileDataConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\GameCovers\XBOXONE\" />
