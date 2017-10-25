@@ -65,10 +65,13 @@ namespace MVCInternetGamesShop.Controllers
         public ActionResult New()
         {
             var platforms = _context.Platforms.ToList();
+            var category = _context.Categories.ToList();
 
             var vm = new GameFormViewModel
             {
-                Platforms = platforms
+                Platforms = platforms,
+                Category = category
+                
             };
             return View("GameForm", vm);
         }
@@ -80,9 +83,18 @@ namespace MVCInternetGamesShop.Controllers
                 return RedirectToAction("New", "Games");
             }
 
-            else
+            if (game.Id == 0)
             {
-                var gameInDb = _context.Games.Single(g => g.Id == game.Id);
+                _context.Games.Add(game);
+            }
+
+            else
+
+            
+            {
+
+               
+                    var gameInDb = _context.Games.Single(g => g.Id == game.Id);
 
                 var gameCategoriesToAdd = new List<GameCategory>();
 
@@ -100,8 +112,10 @@ namespace MVCInternetGamesShop.Controllers
 
 
 
-                _context.SaveChanges();
+                
             }
+
+            _context.SaveChanges();
             return View();
         }
 
