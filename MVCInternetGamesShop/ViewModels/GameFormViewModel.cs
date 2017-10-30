@@ -22,13 +22,17 @@ namespace MVCInternetGamesShop.ViewModels
 
         public IEnumerable<Platform> Platforms { get; set; }
 
+        [Display(Name = "Wybierz kategorię")]
         public List<byte> PlatformId { get; set; }
 
         [Display(Name = "Bestseller?")]
         public bool IsBestseller { get; set; }
 
+        public string PlatformName { get; set; }
+
+        [DataType(DataType.Date)]
         [Display(Name = "Data premiery")]
-        public DateTime ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
 
         [Display(Name = "Opis")]
         public string Description { get; set; }

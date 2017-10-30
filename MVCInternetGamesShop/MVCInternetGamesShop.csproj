@@ -302,6 +302,10 @@
     <Compile Include="Migrations\201710221657068_SeedUsersAndRoles.Designer.cs">
       <DependentUpon>201710221657068_SeedUsersAndRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710301254387_addNullableToDateTime.cs" />
+    <Compile Include="Migrations\201710301254387_addNullableToDateTime.Designer.cs">
+      <DependentUpon>201710301254387_addNullableToDateTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -428,7 +432,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index-Admin.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -457,6 +461,7 @@
     <Content Include="Views\Cart\OrderConfirmation.cshtml" />
     <Content Include="Views\Manage\ChangeUserData.cshtml" />
     <Content Include="Views\Manage\ChangeProfileDataConfirmation.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\GameCovers\XBOXONE\" />
@@ -560,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710221657068_SeedUsersAndRoles.resx">
       <DependentUpon>201710221657068_SeedUsersAndRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710301254387_addNullableToDateTime.resx">
+      <DependentUpon>201710301254387_addNullableToDateTime.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

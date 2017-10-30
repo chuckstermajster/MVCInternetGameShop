@@ -37,6 +37,8 @@ namespace MVCInternetGamesShop.Controllers
             var currentCategories = category.Where(t => currentCategoriesId.Contains(t.Id)).ToList();
             var remainsCategories = category.Except(currentCategories).ToList();
             var currentCategoriesNames = string.Join(",", currentCategories.Select(c => c.Name).ToList());
+            var platformName = string.Join(",", _context.Platforms.Where(p => p.Id == game.PlatformId).Select(p => p.Name).ToList());
+            
 
 
             GameFormViewModel vm = new GameFormViewModel(game)
@@ -47,7 +49,8 @@ namespace MVCInternetGamesShop.Controllers
                 Platforms = platform,
                 CurrentCategories = currentCategories,
                 RemainsCategories = remainsCategories,
-                CurrentCategoriesNames = currentCategoriesNames
+                CurrentCategoriesNames = currentCategoriesNames,
+                PlatformName = platformName
 
             };
 
@@ -71,12 +74,12 @@ namespace MVCInternetGamesShop.Controllers
             {
                 Platforms = platforms,
                 Category = category
-                
+
             };
             return View("GameForm", vm);
         }
 
-        public ActionResult Save(Game game, List<int> selectedIds)
+        public ActionResult Save(Game game)
         {
             if (!ModelState.IsValid)
             {
@@ -89,34 +92,18 @@ namespace MVCInternetGamesShop.Controllers
             }
 
             else
-
-            
             {
-
-               
-                    var gameInDb = _context.Games.Single(g => g.Id == game.Id);
-
-                var gameCategoriesToAdd = new List<GameCategory>();
-
-                foreach (var chosenCategoryId in selectedIds)
-                {
-                    var gameCategory = new GameCategory
-                    {
-                        GameID = gameInDb.Id,
-                        CategoryID = chosenCategoryId
-
-                    };
-                    _context.GameCategorys.Add(gameCategory);
-                }
-
-
-
-
-                
+                var gameInDb = _context.Games.Single(g => g.Id == game.Id);
+                gameInDb.Name = game.Name;
+                gameInDb.ImageName = game.ImageName;
+                gameInDb.Price = game.Price;
+                gameInDb.PlatformId = game.PlatformId;
+                gameInDb.IsBestseller = game.IsBestseller;
+                gameInDb.ReleaseDate = game.ReleaseDate;
             }
 
             _context.SaveChanges();
-            return View();
+            return RedirectToAction("Edit", new { Id = game.Id });
         }
 
         public ActionResult GetCurrentCategoriesIds(int gameId)
@@ -167,7 +154,7 @@ namespace MVCInternetGamesShop.Controllers
                 var currentCategoriesId = _context.GameCategorys.Where(gc => gc.GameID == gameCategory.GameID).Select(gc => gc.CategoryID).ToList();
                 return Json(currentCategoriesId);
             }
-            
+
         }
 
     }

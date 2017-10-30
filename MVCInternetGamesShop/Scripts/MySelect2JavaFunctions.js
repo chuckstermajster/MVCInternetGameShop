@@ -8,27 +8,23 @@ $(document).ready(function () {
         $("#test").select2(
              ).val(listOfCurrentCategories).change();
     });
+
     var GameId = $('#game-id-for-js').attr("data-id");
     var listOfCurrentCategories = getCurrentListOfCategoriesIds(GameId);
-    
-    $('#test').on("select2:unselect", function (e) {
-        
-        var dataToDeleteString = e.params.data.id;
-        var dataToDelete = parseInt(dataToDeleteString);    
-       
-        deleteCategoryFormDatabase(GameId, dataToDelete);
-            
-        
-      
-        
 
-    });    
+    $('#test').on("select2:unselect", function (e) {
+
+        var dataToDeleteString = e.params.data.id;
+        var dataToDelete = parseInt(dataToDeleteString);
+
+        deleteCategoryFormDatabase(GameId, dataToDelete);
+    });
     $('#test').on("select2:select", function (e) {
         var IdToAddString = e.params.data.id;
         var IdToAdd = parseInt(IdToAddString);
         addCategoryToDatabase(GameId, IdToAdd);
-        
-    });    
+
+    });
 });
 
 IsCategoryExistsInDb = function (categoryId, CategorysInDb) {
@@ -36,7 +32,8 @@ IsCategoryExistsInDb = function (categoryId, CategorysInDb) {
     for (var i = 0; i < CategorysInDb.length; i++) {
         if (CategorysInDb[i] === categoryId) {
             found = true;
-            break;        }
+            break;
+        }
     }
     return found;
 };
@@ -45,7 +42,7 @@ getCurrentListOfCategoriesIds = function (GameId) {
     var responseFromServer;
     $.ajax({
         type: 'GET',
-        async: false,        
+        async: false,
         url: "/Games/GetCurrentCategoriesIds/",
         data: { 'gameId': GameId },
         success: function (response) {
@@ -53,14 +50,14 @@ getCurrentListOfCategoriesIds = function (GameId) {
             listOfCurrentCategories = responseFromServer;
         },
         error: function (n) {
-           // alert("błąd ajax")
+            // alert("błąd ajax")
         },
 
         complete: function (data) {
-             $("#test").select2(
-             ).val(responseFromServer).change();
-             
-             
+            $("#test").select2(
+            ).val(responseFromServer).change();
+
+
         }
 
     });
@@ -69,7 +66,7 @@ getCurrentListOfCategoriesIds = function (GameId) {
 
 
 deleteCategoryFormDatabase = function (gameId, deletedCategoryId) {
-    
+
     gameCategory = new GameCategory(gameId, deletedCategoryId);
     $.ajax({
         type: 'POST',
@@ -99,10 +96,7 @@ addCategoryToDatabase = function (gameId, addedCategoryId) {
         }
 
     });
-
-    
 };
-    
 
 
 
@@ -113,7 +107,8 @@ addCategoryToDatabase = function (gameId, addedCategoryId) {
 
 
 
-    
 
-    
+
+
+
 

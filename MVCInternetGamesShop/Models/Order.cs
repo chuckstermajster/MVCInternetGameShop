@@ -45,10 +45,7 @@ namespace MVCInternetGamesShop.Models
         public decimal TotalValue { get; set; }
 
         public virtual ApplicationUser User { get; set; }
-
-        
-
-        
+                      
 
     }
 }

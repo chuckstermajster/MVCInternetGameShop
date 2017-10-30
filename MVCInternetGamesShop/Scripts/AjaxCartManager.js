@@ -2,18 +2,18 @@
 
 $(function () {
     $.post("/Cart/GetHowManyItemsInCart", function (data) {
-        
+
         if (data == 0) {
             $('#pay-button').css("pointer-events", "none");
-            
+
         }
-    
+
 
     });
-    
+
 
     $('.delete-product').click(function () {
-        
+
         var recordToDelete = $(this).attr('data-id');
         if (recordToDelete != '') {
             $.post("/Cart/DeleteFromCart", { "id": recordToDelete },
@@ -21,20 +21,20 @@ $(function () {
                     if (response.CurrentItemsInCartQuantity === 0) {
                         $('#pay-button').css("pointer-events", "none");
                     }
-                    
-                        
-                    
-                    
+
+
+
+
                     if (response.CurrentPostionQuantity === 0) {
-                        $('#delete-row-js-' + response.CurrentPositionId).fadeOut('slow');                             
-                        $('#total-price').text("Razem: " + response.TotalPrice);                        
+                        $('#delete-row-js-' + response.CurrentPositionId).fadeOut('slow');
+                        $('#total-price').text("Razem: " + response.TotalPrice);
                         $('#items-quantity-js').text("Koszyk (" + response.CurrentItemsInCartQuantity + ")");
-                        
-                        
-                        
+
+
+
                     }
                     else {
-                        $('#cart-position-quantity-' + response.CurrentPositionId).text(response.CurrentPostionQuantity);                        
+                        $('#cart-position-quantity-' + response.CurrentPositionId).text(response.CurrentPostionQuantity);
                         $('#total-price').text("Razem: " + response.TotalPrice);
                         $('#items-quantity-js').text("Koszyk (" + response.CurrentItemsInCartQuantity + ")");
                     }
@@ -46,22 +46,17 @@ $(function () {
     $('.add-to-cart-js').click(function (e) {
         e.preventDefault();
         var itemToAdd = $(this).attr("data-id");
-        $.post("/Cart/AddToCart", {"id": itemToAdd},  function (data) {           
-            $('#items-quantity-js').text("Koszyk (" + data + ")");            
+        $.post("/Cart/AddToCart", { "id": itemToAdd }, function (data) {
+            $('#items-quantity-js').text("Koszyk (" + data + ")");
         });
     });
-    
-
-
-   
-        
-    
-
 });
 
 
 
 
-    
+
+
+
 
 

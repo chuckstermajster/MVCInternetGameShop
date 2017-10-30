@@ -36,7 +36,15 @@ namespace MVCInternetGamesShop.Controllers
                 Ps4Newest = ps4Newest
 
             };
-            return View(viewModel);
+            if (User.IsInRole("CanManageStore"))
+            {
+                return View("Index-Admin", viewModel);
+            }
+
+            else
+            {
+                return View(viewModel);
+            }
         }
 
         public ActionResult Platform(int id)
