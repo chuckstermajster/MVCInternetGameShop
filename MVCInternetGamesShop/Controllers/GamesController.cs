@@ -25,7 +25,7 @@ namespace MVCInternetGamesShop.Controllers
                 return HttpNotFound();
             return View(games);
         }
-
+        [Authorize(Roles = "CanManageStore")]
         public ActionResult Edit(int id)
         {
             var game = _context.Games.SingleOrDefault(g => g.Id == id);
@@ -33,10 +33,6 @@ namespace MVCInternetGamesShop.Controllers
             var categoryId = _context.Categories.Select(c => c.Id).ToList();
             var platformId = _context.Platforms.Select(p => p.Id).ToList();
             var platform = _context.Platforms.ToList();
-            var currentCategoriesId = _context.GameCategorys.Where(gc => gc.GameID == id).Select(gc => gc.CategoryID).ToList();
-            var currentCategories = category.Where(t => currentCategoriesId.Contains(t.Id)).ToList();
-            var remainsCategories = category.Except(currentCategories).ToList();
-            var currentCategoriesNames = string.Join(",", currentCategories.Select(c => c.Name).ToList());
             var platformName = string.Join(",", _context.Platforms.Where(p => p.Id == game.PlatformId).Select(p => p.Name).ToList());
             
 
@@ -47,9 +43,6 @@ namespace MVCInternetGamesShop.Controllers
                 CategoryId = categoryId,
                 PlatformId = platformId,
                 Platforms = platform,
-                CurrentCategories = currentCategories,
-                RemainsCategories = remainsCategories,
-                CurrentCategoriesNames = currentCategoriesNames,
                 PlatformName = platformName
 
             };
@@ -64,7 +57,7 @@ namespace MVCInternetGamesShop.Controllers
 
             return View("GameForm", vm);
         }
-
+        [Authorize(Roles = "CanManageStore")]
         public ActionResult New()
         {
             var platforms = _context.Platforms.ToList();
@@ -78,7 +71,7 @@ namespace MVCInternetGamesShop.Controllers
             };
             return View("GameForm", vm);
         }
-
+        [Authorize(Roles = "CanManageStore")]
         public ActionResult Save(Game game)
         {
             if (!ModelState.IsValid)

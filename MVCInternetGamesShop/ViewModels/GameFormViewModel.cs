@@ -22,7 +22,7 @@ namespace MVCInternetGamesShop.ViewModels
 
         public IEnumerable<Platform> Platforms { get; set; }
 
-        [Display(Name = "Wybierz kategorię")]
+        [Display(Name = "Wybierz platformę")]
         public List<byte> PlatformId { get; set; }
 
         [Display(Name = "Bestseller?")]
@@ -39,16 +39,18 @@ namespace MVCInternetGamesShop.ViewModels
 
         [Display(Name = "Kategoria")]
         public List<Category> Category { get; set; }
+
+
         public List<byte> CategoryId { get; set; }
-        public List<Category> CurrentCategories { get; set; }
-        public List<Category> RemainsCategories { get; set; }
-        public List<int> SelectedIds { get; set; }
-
-        [Display(Name = "Aktualnie wybrane kategorie")]
-        public string CurrentCategoriesNames { get; set; }
 
 
-       
+
+
+
+
+
+
+
 
 
 
@@ -58,7 +60,7 @@ namespace MVCInternetGamesShop.ViewModels
             Name = game.Name;
             IsBestseller = game.IsBestseller;
             Price = game.Price;
-            ImageName = game.ImageName;            
+            ImageName = game.ImageName;
             ReleaseDate = game.ReleaseDate;
             Description = game.Description;
         }
@@ -68,7 +70,7 @@ namespace MVCInternetGamesShop.ViewModels
             Id = 0;
         }
 
-        
+
 
 
     }
