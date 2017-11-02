@@ -44,6 +44,15 @@ namespace MVCInternetGamesShop.ViewModels
         public List<byte> CategoryId { get; set; }
 
 
+       public string Title
+        {
+            get
+            {
+                return Id == 0 ? "Dodaj nową grę" : "Edytuj Grę";
+            }
+        }
+
+
 
 
 
