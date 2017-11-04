@@ -306,6 +306,14 @@
     <Compile Include="Migrations\201710301254387_addNullableToDateTime.Designer.cs">
       <DependentUpon>201710301254387_addNullableToDateTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711041106114_AddAnnotationsToGame.cs" />
+    <Compile Include="Migrations\201711041106114_AddAnnotationsToGame.Designer.cs">
+      <DependentUpon>201711041106114_AddAnnotationsToGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711041226384_ChangeGamePlatformIdToRequired.cs" />
+    <Compile Include="Migrations\201711041226384_ChangeGamePlatformIdToRequired.Designer.cs">
+      <DependentUpon>201711041226384_ChangeGamePlatformIdToRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -462,6 +470,7 @@
     <Content Include="Views\Manage\ChangeUserData.cshtml" />
     <Content Include="Views\Manage\ChangeProfileDataConfirmation.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Games\GameSuccessfullyEdited.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\GameCovers\XBOXONE\" />
@@ -568,6 +577,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710301254387_addNullableToDateTime.resx">
       <DependentUpon>201710301254387_addNullableToDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711041106114_AddAnnotationsToGame.resx">
+      <DependentUpon>201711041106114_AddAnnotationsToGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711041226384_ChangeGamePlatformIdToRequired.resx">
+      <DependentUpon>201711041226384_ChangeGamePlatformIdToRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

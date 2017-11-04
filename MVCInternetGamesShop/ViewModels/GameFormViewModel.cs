@@ -11,9 +11,12 @@ namespace MVCInternetGamesShop.ViewModels
     {
         public int Id { get; set; }
 
+        [Required]
         [Display(Name = "Nazwa gry")]
         public string Name { get; set; }
 
+        [Required]
+        [RegularExpression("[0-9]+[.,]?[0-9]*", ErrorMessage = "Cena musi być liczbą!")]
         [Display(Name = "Cena")]
         public decimal Price { get; set; }
 
@@ -30,7 +33,8 @@ namespace MVCInternetGamesShop.ViewModels
 
         public string PlatformName { get; set; }
 
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date, ErrorMessage = "Podana wartość musi być datą w formacie dd.mm.yyyy")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [Display(Name = "Data premiery")]
         public DateTime? ReleaseDate { get; set; }
 

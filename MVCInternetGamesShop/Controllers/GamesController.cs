@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using MVCInternetGamesShop.ViewModels;
+using System.Data.Entity.Infrastructure;
 
 namespace MVCInternetGamesShop.Controllers
 {
@@ -27,7 +28,14 @@ namespace MVCInternetGamesShop.Controllers
         }
         [Authorize(Roles = "CanManageStore")]
         public ActionResult Edit(int id)
+            
+
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             var game = _context.Games.SingleOrDefault(g => g.Id == id);
             var category = _context.Categories.ToList();
             var categoryId = _context.Categories.Select(c => c.Id).ToList();
@@ -76,12 +84,22 @@ namespace MVCInternetGamesShop.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return RedirectToAction("New", "Games");
+                var platforms = _context.Platforms.ToList();
+                var category = _context.Categories.ToList();
+
+                var vm = new GameFormViewModel
+                {
+                    Platforms = platforms,
+                    Category = category
+
+                };
+                return View("GameForm", vm);
             }
 
             if (game.Id == 0)
             {
                 _context.Games.Add(game);
+                return RedirectToAction("Edit", new { Id = game.Id });
             }
 
             else
@@ -93,11 +111,15 @@ namespace MVCInternetGamesShop.Controllers
                 gameInDb.PlatformId = game.PlatformId;
                 gameInDb.IsBestseller = game.IsBestseller;
                 gameInDb.ReleaseDate = game.ReleaseDate;
+                _context.SaveChanges();
+                return View("GameSuccessfullyEdited");
             }
 
-            _context.SaveChanges();
-            return RedirectToAction("Edit", new { Id = game.Id });
+            
+            
         }
+
+        
 
         public ActionResult GetCurrentCategoriesIds(int gameId)
         {
