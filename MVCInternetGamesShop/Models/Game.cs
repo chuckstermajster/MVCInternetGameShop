@@ -14,6 +14,7 @@ namespace MVCInternetGamesShop.Models
         public string Name { get; set; }
         [Required]
         public decimal Price { get; set; }
+        //[Required(ErrorMessage = "Nazwa obrazka jest obowiązkowa. Jeśli nie chcesz dodawać obrazka - wpisz cokolwiek")]
         public string ImageName { get; set; }
         
         public Platform Platform { get; set; }

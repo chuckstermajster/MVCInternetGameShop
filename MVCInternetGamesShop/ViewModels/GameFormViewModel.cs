@@ -21,6 +21,7 @@ namespace MVCInternetGamesShop.ViewModels
         public decimal Price { get; set; }
 
         [Display(Name = "Nazwa obrazka")]
+        
         public string ImageName { get; set; }
 
         public IEnumerable<Platform> Platforms { get; set; }

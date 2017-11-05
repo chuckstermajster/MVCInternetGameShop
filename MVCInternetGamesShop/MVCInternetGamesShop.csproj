@@ -347,16 +347,29 @@
     <Content Include="Content\css\select2.css" />
     <Content Include="Content\css\select2.min.css" />
     <Content Include="Content\GameCovers\PC\BatmanArkhamAsylum.jpg" />
+    <Content Include="Content\GameCovers\PC\DefaultName.jpg" />
     <Content Include="Content\GameCovers\PC\FEAR.jpg" />
+    <Content Include="Content\GameCovers\PC\LifeIsStrange.jpg" />
     <Content Include="Content\GameCovers\PC\Overwatch.jpg" />
+    <Content Include="Content\GameCovers\PC\Redeemer.jpg" />
     <Content Include="Content\GameCovers\PC\SleepingDogs.jpg" />
+    <Content Include="Content\GameCovers\PC\The sims 4.jpg" />
     <Content Include="Content\GameCovers\PC\TombRaider.jpg" />
+    <Content Include="Content\GameCovers\PC\YesterdayOrigins.jpg" />
     <Content Include="Content\GameCovers\PS4\BloodBorne.jpg" />
+    <Content Include="Content\GameCovers\PS4\DefaultName.jpg" />
     <Content Include="Content\GameCovers\PS4\HorizonZeroDawn.jpg" />
     <Content Include="Content\GameCovers\PS4\LifeIsStrange.jpg" />
     <Content Include="Content\GameCovers\PS4\RiseOfTheTombRider.jpg" />
     <Content Include="Content\GameCovers\PS4\TheLastOfUs.jpg" />
     <Content Include="Content\GameCovers\PS4\Yesterday Origins.jpg" />
+    <Content Include="Content\GameCovers\XBOXONE\DefaultName.jpg" />
+    <Content Include="Content\GameCovers\XBOXONE\GearsOfWar.jpg" />
+    <Content Include="Content\GameCovers\XBOXONE\killerInstinct.jpg" />
+    <Content Include="Content\GameCovers\XBOXONE\LifeIsStrange.jpg" />
+    <Content Include="Content\GameCovers\XBOXONE\Mafia III.jpg" />
+    <Content Include="Content\GameCovers\XBOXONE\TombRaiderXBOX.jpg" />
+    <Content Include="Content\GameCovers\XBOXONE\YesterdayOrigins.jpg" />
     <Content Include="Content\myCss1.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -473,7 +486,6 @@
     <Content Include="Views\Games\GameSuccessfullyEdited.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\GameCovers\XBOXONE\" />
     <Folder Include="Content\images\" />
   </ItemGroup>
   <ItemGroup>

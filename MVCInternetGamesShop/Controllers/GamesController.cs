@@ -101,6 +101,10 @@ namespace MVCInternetGamesShop.Controllers
             {
                 _context.Games.Add(game);
                 _context.Entry(game).State = EntityState.Added;
+                if (game.ImageName == null)
+                {
+                    game.ImageName = "DefaultName.jpg";
+                }
                 _context.SaveChanges();
                 return RedirectToAction("Edit", new { Id = game.Id });
             }
