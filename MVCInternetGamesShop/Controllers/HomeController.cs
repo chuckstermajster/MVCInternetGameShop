@@ -47,12 +47,15 @@ namespace MVCInternetGamesShop.Controllers
             }
         }
 
+       
+
         public ActionResult Platform(int id)
         {
-            var games = _context.Games.Where(g => g.PlatformId == id).ToList();
+            var games = _context.Games.Where(g => g.PlatformId == id).ToList();            
             var viewModel = new PlatformViewModel
             {
-                Games = games
+                Games = games,
+                
             };
 
             return View(viewModel);

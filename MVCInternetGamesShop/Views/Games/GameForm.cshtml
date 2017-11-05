@@ -28,7 +28,7 @@
 
     <div class="form-group">
         @Html.LabelFor(m => m.PlatformId)
-        <label>Aktualnie: @Model.PlatformName</label>
+       <label>Aktualnie: @Model.PlatformName</label>
         @Html.DropDownListFor(m => m.PlatformId, new SelectList(Model.Platforms, "Id", "Name"), "--Wybierz Platformę --", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.PlatformId)
     </div>
@@ -40,7 +40,7 @@
 
     <div class="form-group">
         @Html.LabelFor(m => m.ReleaseDate)
-        <label>Format: mm.dd.yyyy</label>
+        <label>Format: dd.mm.yyyy</label>
         @Html.TextBoxFor(m => m.ReleaseDate, "{0: d MMM yyyy}", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.ReleaseDate)
     </div>

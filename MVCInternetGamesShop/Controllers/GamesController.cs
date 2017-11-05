@@ -28,7 +28,7 @@ namespace MVCInternetGamesShop.Controllers
         }
         [Authorize(Roles = "CanManageStore")]
         public ActionResult Edit(int id)
-            
+
 
         {
             if (!ModelState.IsValid)
@@ -42,7 +42,8 @@ namespace MVCInternetGamesShop.Controllers
             var platformId = _context.Platforms.Select(p => p.Id).ToList();
             var platform = _context.Platforms.ToList();
             var platformName = string.Join(",", _context.Platforms.Where(p => p.Id == game.PlatformId).Select(p => p.Name).ToList());
-            
+
+
 
 
             GameFormViewModel vm = new GameFormViewModel(game)
@@ -99,6 +100,8 @@ namespace MVCInternetGamesShop.Controllers
             if (game.Id == 0)
             {
                 _context.Games.Add(game);
+                _context.Entry(game).State = EntityState.Added;
+                _context.SaveChanges();
                 return RedirectToAction("Edit", new { Id = game.Id });
             }
 
@@ -115,11 +118,11 @@ namespace MVCInternetGamesShop.Controllers
                 return View("GameSuccessfullyEdited");
             }
 
-            
-            
+
+
         }
 
-        
+
 
         public ActionResult GetCurrentCategoriesIds(int gameId)
         {
