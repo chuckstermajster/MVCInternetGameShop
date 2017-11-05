@@ -435,6 +435,10 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\AjaxCartManager.js" />
     <Content Include="Scripts\MySelect2JavaFunctions.js" />
+    <Content Include="Scripts\qTip\jquery.qtip.css" />
+    <Content Include="Scripts\qTip\jquery.qtip.js" />
+    <Content Include="Scripts\qTip\jquery.qtip.min.css" />
+    <Content Include="Scripts\qTip\jquery.qtip.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\select2.js" />
@@ -484,6 +488,7 @@
     <Content Include="Views\Manage\ChangeProfileDataConfirmation.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Games\GameSuccessfullyEdited.cshtml" />
+    <Content Include="Scripts\qTip\jquery.qtip.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\images\" />
