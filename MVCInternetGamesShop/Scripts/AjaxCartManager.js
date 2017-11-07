@@ -20,6 +20,12 @@ $(function () {
                 function (response) {
                     if (response.CurrentItemsInCartQuantity === 0) {
                         $('#pay-button').css("pointer-events", "none");
+                        $('#empty-message').removeClass('hidden');
+                        
+                    }
+
+                    else {
+                        $('#empty-message').addClass('hidden');
                     }
 
 

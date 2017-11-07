@@ -3,14 +3,22 @@
     display: block;
 }
 
+.edit-game-button {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 50%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
 
 #banner {
     margin-top: 50px;
     width:auto;
     height:278px;
     background-color:#e6b9b9;
-    text-align: center;
-    
+    text-align: center;    
 }
 
 img {
@@ -36,21 +44,14 @@ img {
     width: 100px;
 }
 
-#test {
+#select-category-field{
     width: 400px;
 }
 .hide {
     display: none;
 }
 
-.edit-game-button {
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    right: 50%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
+
 
 
 

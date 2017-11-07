@@ -58,14 +58,26 @@
     </tbody>
 </table>
 
-@if (Model.CartPosition.Count == 0)
-            {
-    <p id="empty-message">Twój koszyk jest pusty</p>
-}
+
+        
+    <p id="empty-message" class="hidden" data-cartQuantity="@Model.CartPosition.Count">Twój koszyk jest pusty</p>
+
+
+
 
 <p id="total-price">Razem @Model.TotalPrice</p>
 
 <a class="btn btn-default" id="pay-button" href="@Url.Action("Confirm", "Cart")">Zapłać</a>
 
 
+@section scripts {
+    
+    <script>
+        var numberOfItemsInCart = $('#empty-message').attr('data-cartQuantity');
+        console.log(typeof numberOfItemsInCart)
+        if (numberOfItemsInCart === '0') {
+            $('#empty-message').removeClass('hidden');
+        }
 
+    </script>
+    }

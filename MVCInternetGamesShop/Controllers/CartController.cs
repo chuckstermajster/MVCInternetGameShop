@@ -16,7 +16,7 @@ namespace MVCInternetGamesShop.Controllers
     {
         private CartManager cartManager;
         private ISessionManager sessionManager;
-        private ApplicationDbContext _context;        
+        private ApplicationDbContext _context;
         private ApplicationUserManager _userManager;
         public ApplicationUserManager UserManager
         {
@@ -93,18 +93,15 @@ namespace MVCInternetGamesShop.Controllers
                     StreetNumber = user.StreetNumber,
                     PostCode = user.PostCode,
                     HouseNumber = user.HouseNumber
-
-                    
-                 
                 };
-             
+
 
                 return View(order);
             }
 
             else
             {
-                return RedirectToAction("Login", "Account",  new { returnUrl = Url.Action("Confirm", "Cart") });
+                return RedirectToAction("Login", "Account", new { returnUrl = Url.Action("Confirm", "Cart") });
             }
         }
         [HttpPost]
@@ -112,13 +109,13 @@ namespace MVCInternetGamesShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+
                 var userId = User.Identity.GetUserId();
 
-                
+
                 var newOrder = cartManager.CreateOrder(order, userId);
 
-                
+
                 var user = await UserManager.FindByIdAsync(userId);
                 user.City = order.City;
                 user.Street = order.Street;
@@ -126,14 +123,14 @@ namespace MVCInternetGamesShop.Controllers
                 user.HouseNumber = order.HouseNumber;
                 user.PostCode = order.PostCode;
                 user.Name = order.Name;
-                
-               await _context.SaveChangesAsync();
+
+                await _context.SaveChangesAsync();
 
 
-                
+
                 cartManager.EmptyCart();
 
-               
+
 
                 return RedirectToAction("OrderConfirmation");
             }

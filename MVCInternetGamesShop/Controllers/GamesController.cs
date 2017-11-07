@@ -43,9 +43,6 @@ namespace MVCInternetGamesShop.Controllers
             var platform = _context.Platforms.ToList();
             var platformName = string.Join(",", _context.Platforms.Where(p => p.Id == game.PlatformId).Select(p => p.Name).ToList());
 
-
-
-
             GameFormViewModel vm = new GameFormViewModel(game)
             {
                 Category = category,
@@ -53,11 +50,7 @@ namespace MVCInternetGamesShop.Controllers
                 PlatformId = platformId,
                 Platforms = platform,
                 PlatformName = platformName
-
             };
-
-
-
 
             if (game == null)
             {
@@ -121,9 +114,6 @@ namespace MVCInternetGamesShop.Controllers
                 _context.SaveChanges();
                 return View("GameSuccessfullyEdited");
             }
-
-
-
         }
 
 
@@ -180,8 +170,4 @@ namespace MVCInternetGamesShop.Controllers
         }
 
     }
-
-
-
-
 }

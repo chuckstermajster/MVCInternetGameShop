@@ -11,53 +11,55 @@
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.Name)
-        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Name)
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
     </div>
 
     <div class="form-group">
-        
-            @Html.LabelFor(m => m.Price)
+
+        @Html.LabelFor(m => m.Price)
+        <div class="col-md-10">
             @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Price)
-        
+
+        </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.ImageName, new {@class = "tooltip-message" })
-        @Html.TextBoxFor(m => m.ImageName, new { @class = "form-control" })
+        @Html.LabelFor(m => m.ImageName, new { @class = "tooltip-message" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.ImageName, new { @class = "form-control" })
+        </div>
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.PlatformId)
-       <label>Aktualnie: @Model.PlatformName</label>
-        @Html.DropDownListFor(m => m.PlatformId, new SelectList(Model.Platforms, "Id", "Name"), "--Wybierz Platformę --", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.PlatformId)
+        <label>Aktualnie: @Model.PlatformName</label>
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.PlatformId, new SelectList(Model.Platforms, "Id", "Name"), "--Wybierz Platformę --", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PlatformId)
+        </div>
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.IsBestseller)
-        @Html.CheckBoxFor(m => m.IsBestseller)
-    </div>
+
 
     <div class="form-group">
         @Html.LabelFor(m => m.ReleaseDate)
         <label>Format: dd.mm.yyyy</label>
-        @Html.TextBoxFor(m => m.ReleaseDate, "{0: d MMM yyyy}", new { @class = "form-control", text = "Jeśli nie masz obrazka, zostaw to pole puste" })
-        @Html.ValidationMessageFor(m => m.ReleaseDate)
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.ReleaseDate, "{0: d MMM yyyy}", new { @class = "form-control", text = "Jeśli nie masz obrazka, zostaw to pole puste" })
+            @Html.ValidationMessageFor(m => m.ReleaseDate)
+        </div>
     </div>
-
-
-
-
     @Html.HiddenFor(m => m.Id)
-    <button type="submit" id="submit-button">Save</button>
+                <button type="submit" id="submit-button">Save</button>
     if (Model.Id != 0)
     {
         <div class="form-group">
             <label for="CurrentCategories">Przypisane Kategorie</label>
-            <select id="test" multiple="multiple" name="SelectedIds">
-                <option value=""></option>
+            <select id="select-category-field" multiple="multiple" name="SelectedIds">
                 @foreach (var category in Model.Category)
                 {
                     <option id="option-@category.Id" value="@category.Id">@category.Name</option>
@@ -67,14 +69,15 @@
     }
 
 }
+
+<div class="form-group">
+    @Html.LabelFor(m => m.IsBestseller)
+    @Html.CheckBoxFor(m => m.IsBestseller)
+</div>
 <div class="hidden" id="game-id-for-js" data-id="@Model.Id"></div>
 
 @section scripts {
-    @Scripts.Render("~/bundles/EditCategoryScripts")      
-    
-    
-
-
+    @Scripts.Render("~/bundles/EditCategoryScripts")
 }
 
 

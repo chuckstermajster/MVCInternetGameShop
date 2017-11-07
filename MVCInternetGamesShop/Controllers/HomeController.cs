@@ -34,7 +34,6 @@ namespace MVCInternetGamesShop.Controllers
                 PCNewest = PCNewest,
                 Ps4Bestsellers = ps4Bestsellers,
                 Ps4Newest = ps4Newest
-
             };
             if (User.IsInRole("CanManageStore"))
             {
@@ -47,25 +46,20 @@ namespace MVCInternetGamesShop.Controllers
             }
         }
 
-       
+
 
         public ActionResult Platform(int id)
         {
-            var games = _context.Games.Where(g => g.PlatformId == id).ToList();            
+            var games = _context.Games.Where(g => g.PlatformId == id).ToList();
             var viewModel = new PlatformViewModel
             {
                 Games = games,
-                
+
             };
 
             return View(viewModel);
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+        
     }
 }
