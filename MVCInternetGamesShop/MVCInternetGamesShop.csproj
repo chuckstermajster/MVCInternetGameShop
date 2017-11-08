@@ -487,6 +487,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Games\GameSuccessfullyEdited.cshtml" />
     <Content Include="Scripts\qTip\jquery.qtip.min.js.map" />
+    <Content Include="Views\Home\PlatformAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\images\" />
