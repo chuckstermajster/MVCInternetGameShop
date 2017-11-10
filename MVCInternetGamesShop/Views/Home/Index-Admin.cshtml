@@ -25,7 +25,7 @@
                     <p>@bestseller.Name    @bestseller.Price zł</p>
                     <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=bestseller.Id })"><img src="@Url.PCCoversPath(bestseller.ImageName)" /></a><a href="@Url.Action("Edit", "Games" , new { id=bestseller.Id })" class="btn btn-danger edit-game-button">Edytuj</a></div>                    
                     <a class="btn btn-primary add-to-cart-js" data-id="@bestseller.Id" href="#">Dodaj do koszyka</a>
-                    <a class="btn btn-primary add-to-cart-js" data-id="@bestseller.Id" href="@Url.Action("Details", "Games" , new { id=bestseller.Id })">Szczegóły</a>
+                    <a class="btn btn-primary" href="@Url.Action("Details", "Games" , new { id=bestseller.Id })">Szczegóły</a>
                     
 
 
@@ -49,7 +49,7 @@
 
                 <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=newest.Id })"><img src="@Url.PCCoversPath(newest.ImageName)" /></a><a href="@Url.Action("Edit", "Games" , new { id=newest.Id })" class="btn btn-danger edit-game-button">Edytuj</a></div>
                 <a class="btn btn-primary add-to-cart-js" data-id="@newest.Id" href="#">Dodaj do koszyka</a>
-                <a class="btn btn-primary add-to-cart-js" data-id="@newest.Id" href="@Url.Action("Details", "Games" , new { id=newest.Id })">Szczegóły</a>
+                <a class="btn btn-primary" href="@Url.Action("Details", "Games" , new { id=newest.Id })">Szczegóły</a>
 
 
             </li>
@@ -71,7 +71,7 @@
 
                     <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=bestseller.Id })"><img src="@Url.Ps4CoversPath(bestseller.ImageName)" /></a><a href="@Url.Action("Edit", "Games" , new { id=bestseller.Id })" class="btn btn-danger edit-game-button">Edytuj</a></div>
                     <a class="btn btn-primary add-to-cart-js" data-id="@bestseller.Id" href="#">Dodaj do koszyka</a>
-                    <a class="btn btn-primary add-to-cart-js" data-id="@bestseller.Id" href="@Url.Action("Details", "Games" , new { id=bestseller.Id })">Szczegóły</a>
+                    <a class="btn btn-primary" href="@Url.Action("Details", "Games" , new { id=bestseller.Id })">Szczegóły</a>
 
 
                 </li>
@@ -94,7 +94,7 @@
 
                 <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=newest.Id })"><img src="@Url.Ps4CoversPath(newest.ImageName)" /></a><a href="@Url.Action("Edit", "Games" , new { id=newest.Id })" class="btn btn-danger edit-game-button">Edytuj</a></div>
                 <a class="btn btn-primary add-to-cart-js" data-id="@newest.Id" href="#">Dodaj do koszyka</a>
-                <a class="btn btn-primary add-to-cart-js" data-id="@newest.Id" href="@Url.Action("Details", "Games" , new { id=newest.Id })">Szczegóły</a>
+                <a class="btn btn-primary" href="@Url.Action("Details", "Games" , new { id=newest.Id })">Szczegóły</a>
 
 
             </li>
@@ -116,7 +116,7 @@
 
                     <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=bestseller.Id })"><img src="@Url.XBoxOneCoversPath(bestseller.ImageName)" /></a><a href="@Url.Action("Edit", "Games" , new { id=bestseller.Id })" class="btn btn-danger edit-game-button">Edytuj</a></div>
                     <a class="btn btn-primary add-to-cart-js" data-id="@bestseller.Id" href="#">Dodaj do koszyka</a>
-                    <a class="btn btn-primary add-to-cart-js" data-id="@bestseller.Id" href="@Url.Action("Details", "Games" , new { id=bestseller.Id })">Szczegóły</a>
+                    <a class="btn btn-primary" href="@Url.Action("Details", "Games" , new { id=bestseller.Id })">Szczegóły</a>
 
 
                 </li>
@@ -139,7 +139,7 @@
 
                 <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=newest.Id })"><img src="@Url.XBoxOneCoversPath(newest.ImageName)" /></a><a href="@Url.Action("Edit", "Games" , new { id=newest.Id })" class="btn btn-danger edit-game-button">Edytuj</a></div>
                 <a class="btn btn-primary add-to-cart-js" data-id="@newest.Id" href="#">Dodaj do koszyka</a>
-                <a class="btn btn-primary add-to-cart-js" data-id="@newest.Id" href="@Url.Action("Details", "Games" , new { id=newest.Id })">Szczegóły</a>
+                <a class="btn btn-primary" href="@Url.Action("Details", "Games" , new { id=newest.Id })">Szczegóły</a>
 
             </li>
         }

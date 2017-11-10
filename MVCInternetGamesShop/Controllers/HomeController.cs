@@ -57,9 +57,19 @@ namespace MVCInternetGamesShop.Controllers
 
             };
 
-            return View(viewModel);
+            if (User.IsInRole("CanManageStore"))
+            {
+                return View("PlatformAdmin", viewModel);
+            }
+
+            else
+            {
+                return View(viewModel);
+            }
+
+
         }
 
-        
+
     }
 }

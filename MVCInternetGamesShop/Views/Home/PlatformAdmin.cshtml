@@ -1,7 +1,44 @@
-﻿
+﻿@model MVCInternetGamesShop.ViewModels.PlatformViewModel
+@using MVCInternetGamesShop.Infrastructure
 @{
-    ViewBag.Title = "PlatformAdmin";
+    ViewBag.Title = "Platform";
 }
 
-<h2>PlatformAdmin</h2>
+<h2>Platform</h2>
+
+
+
+
+<div class="jumbotron">
+    <ul class="list-inline">
+        @foreach (var game in Model.Games)
+        {
+            var src = "";
+            {
+
+                if (game.PlatformId == 1)
+                {
+                    src = Url.Ps4CoversPath(game.ImageName);
+                }
+                else if (game.PlatformId == 2)
+                {
+                    src = Url.PCCoversPath(game.ImageName);
+                }
+                else if (game.PlatformId == 3)
+                {
+                    src = Url.XBoxOneCoversPath(game.ImageName);
+                }
+            }
+
+            <li>
+
+
+                <p>@game.Name</p>
+
+                <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=game.Id })"><img src="@src" /> </a><a href="@Url.Action("Edit", "Games" , new { id=game.Id })" class="btn btn-danger edit-game-button">Edytuj</a></div>
+                <a class="btn btn-primary add-to-cart-js" data-id="@game.Id" href="#">Dodaj do koszyka</a>
+            </li>
+        }
+    </ul>
+</div>
 
