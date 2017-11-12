@@ -14,11 +14,11 @@
 
 
 #banner {
-    margin-top: 50px;
+    margin-top: 10px;
     width:auto;
     height:278px;
     background-color:#e6b9b9;
-    text-align: center;    
+   text-overflow: ellipsis;   
 }
 
 img {
@@ -51,6 +51,16 @@ img {
     display: none;
 }
 
+.game-name {
+    color: aquamarine;    
+    padding-top: 40px;
+}
+
+.info-message {
+    color: red;
+    font-size: 18px;
+    font-weight: 600;
+}
 
 
 

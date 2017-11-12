@@ -111,6 +111,7 @@ namespace MVCInternetGamesShop.Controllers
                 gameInDb.PlatformId = game.PlatformId;
                 gameInDb.IsBestseller = game.IsBestseller;
                 gameInDb.ReleaseDate = game.ReleaseDate;
+                gameInDb.Description = game.Description;
                 _context.SaveChanges();
                 return View("GameSuccessfullyEdited");
             }

@@ -33,7 +33,7 @@
             <li>
 
 
-                <p>@game.Name</p>
+                <p class="game-name">@game.Name Cena: @game.Price zł</p>
 
                 <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=game.Id })"><img src="@src" /> </a></div>
                 <a class="btn btn-primary add-to-cart-js" data-id="@game.Id" href="#">Dodaj do koszyka</a>

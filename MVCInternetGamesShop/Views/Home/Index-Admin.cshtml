@@ -7,7 +7,8 @@
 }
 
 <div id="banner">
-    <h1>BANNER PLACEHOLDER</h1>
+    <h1>BANNER PLACEHOLDER </h1>
+    <span class="info-message"> W celach testowych zostały stworzone dwa konta. Administratora i zwykłego użytkownika. Nie musisz więc zakładać własnego - po prostu użyj poniższych danych. Konto Administratora posiada dodatkowe możliwości - dodawania i edycji gier. <br />  Dane: admin@gmail.com hasło: Abba1234! <br />  lub quest@gmail.com  hasło: Abba123!</span>
 </div>
 
 <div class="jumbotron">
@@ -18,16 +19,11 @@
             @foreach (var bestseller in Model.PCBestsellers)
 
             {
-
-<li>
-
-
-                    <p>@bestseller.Name    @bestseller.Price zł</p>
-                    <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=bestseller.Id })"><img src="@Url.PCCoversPath(bestseller.ImageName)" /></a><a href="@Url.Action("Edit", "Games" , new { id=bestseller.Id })" class="btn btn-danger edit-game-button">Edytuj</a></div>                    
+                <li>
+                    <p class="game-name">@bestseller.Name Cena: @bestseller.Price zł</p>
+                    <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=bestseller.Id })"><img src="@Url.PCCoversPath(bestseller.ImageName)" /></a><a href="@Url.Action("Edit", "Games" , new { id=bestseller.Id })" class="btn btn-danger edit-game-button">Edytuj</a></div>
                     <a class="btn btn-primary add-to-cart-js" data-id="@bestseller.Id" href="#">Dodaj do koszyka</a>
                     <a class="btn btn-primary" href="@Url.Action("Details", "Games" , new { id=bestseller.Id })">Szczegóły</a>
-                    
-
 
                 </li>
             }
@@ -45,7 +41,7 @@
             <li>
 
 
-                <p>@newest.Name    @newest.Price zł</p>
+                <p class="game-name">@newest.Name    @newest.Price zł</p>
 
                 <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=newest.Id })"><img src="@Url.PCCoversPath(newest.ImageName)" /></a><a href="@Url.Action("Edit", "Games" , new { id=newest.Id })" class="btn btn-danger edit-game-button">Edytuj</a></div>
                 <a class="btn btn-primary add-to-cart-js" data-id="@newest.Id" href="#">Dodaj do koszyka</a>
@@ -67,7 +63,7 @@
                 <li>
 
 
-                    <p>@bestseller.Name   @bestseller.Price zł</p>
+                    <p class="game-name">@bestseller.Name   @bestseller.Price zł</p>
 
                     <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=bestseller.Id })"><img src="@Url.Ps4CoversPath(bestseller.ImageName)" /></a><a href="@Url.Action("Edit", "Games" , new { id=bestseller.Id })" class="btn btn-danger edit-game-button">Edytuj</a></div>
                     <a class="btn btn-primary add-to-cart-js" data-id="@bestseller.Id" href="#">Dodaj do koszyka</a>
@@ -90,7 +86,7 @@
             <li>
 
 
-                <p>@newest.Name    @newest.Price zł</p>
+                <p class="game-name">@newest.Name    @newest.Price zł</p>
 
                 <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=newest.Id })"><img src="@Url.Ps4CoversPath(newest.ImageName)" /></a><a href="@Url.Action("Edit", "Games" , new { id=newest.Id })" class="btn btn-danger edit-game-button">Edytuj</a></div>
                 <a class="btn btn-primary add-to-cart-js" data-id="@newest.Id" href="#">Dodaj do koszyka</a>
@@ -112,7 +108,7 @@
                 <li>
 
 
-                    <p>@bestseller.Name   @bestseller.Price zł</p>
+                    <p class="game-name">@bestseller.Name   @bestseller.Price zł</p>
 
                     <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=bestseller.Id })"><img src="@Url.XBoxOneCoversPath(bestseller.ImageName)" /></a><a href="@Url.Action("Edit", "Games" , new { id=bestseller.Id })" class="btn btn-danger edit-game-button">Edytuj</a></div>
                     <a class="btn btn-primary add-to-cart-js" data-id="@bestseller.Id" href="#">Dodaj do koszyka</a>
@@ -135,7 +131,7 @@
             <li>
 
 
-                <p>@newest.Name    @newest.Price zł</p>
+                <p class="game-name">@newest.Name    @newest.Price zł</p>
 
                 <div class="img-container-large"><a href="@Url.Action("Details", "Games" , new { id=newest.Id })"><img src="@Url.XBoxOneCoversPath(newest.ImageName)" /></a><a href="@Url.Action("Edit", "Games" , new { id=newest.Id })" class="btn btn-danger edit-game-button">Edytuj</a></div>
                 <a class="btn btn-primary add-to-cart-js" data-id="@newest.Id" href="#">Dodaj do koszyka</a>
