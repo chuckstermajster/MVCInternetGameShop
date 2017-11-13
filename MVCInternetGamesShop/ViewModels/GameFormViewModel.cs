@@ -55,6 +55,7 @@ namespace MVCInternetGamesShop.ViewModels
             {
                 return Id == 0 ? "Dodaj nową grę" : "Edytuj Grę";
             }
+            set { }
         }
 
 

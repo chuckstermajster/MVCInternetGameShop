@@ -84,7 +84,9 @@ namespace MVCInternetGamesShop.Controllers
                 var vm = new GameFormViewModel
                 {
                     Platforms = platforms,
-                    Category = category
+                    Category = category,
+                    Id = game.Id
+
 
                 };
                 return View("GameForm", vm);
@@ -106,7 +108,15 @@ namespace MVCInternetGamesShop.Controllers
             {
                 var gameInDb = _context.Games.Single(g => g.Id == game.Id);
                 gameInDb.Name = game.Name;
-                gameInDb.ImageName = game.ImageName;
+                if (game.ImageName == null)
+                {
+                    gameInDb.ImageName = "DefaultName.jpg";
+                }
+                else
+                {
+                    gameInDb.ImageName = game.ImageName;
+                }
+
                 gameInDb.Price = game.Price;
                 gameInDb.PlatformId = game.PlatformId;
                 gameInDb.IsBestseller = game.IsBestseller;

@@ -22,6 +22,7 @@ namespace MVCInternetGamesShop.Models
         public bool IsBestseller { get; set; }
 
         [DataType(DataType.Date, ErrorMessage = "Podana wartość musi być datą w formacie dd.mm.yyyy")]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? ReleaseDate { get; set; }
         public string Description { get; set; }
 

@@ -54,7 +54,7 @@
                 <div class="col-md-10">
                     @Html.LabelFor(m => m.ReleaseDate)
                     <label>Format: dd.mm.yyyy</label>
-                    @Html.TextBoxFor(m => m.ReleaseDate, "{0: d MMM yyyy}", new { @class = "form-control", text = "Jeśli nie masz obrazka, zostaw to pole puste" })
+                    @Html.EditorFor(model => model.ReleaseDate, new { @type = "date", @class = "form-control", text = "Jeśli nie masz obrazka, zostaw to pole puste" })
                     @Html.ValidationMessageFor(m => m.ReleaseDate)
                 </div>
             </div>
@@ -89,17 +89,29 @@
                     </div>
                 </div>
             }
-
+            <div class="hidden" id="game-id-for-js" data-id="@Model.Id"></div>
         }
     </div>
 </div>
 
-            <div class="hidden" id="game-id-for-js" data-id="@Model.Id"></div>
+            
 
             @section scripts {
                 @Scripts.Render("~/bundles/EditCategoryScripts")
 
+                <script>
+                    var submit = $('#submit-button');
+                    submit.on("click", function(e) {
+                        console.log($(this).valid())
+                       // if (this.valid()) { alert('valid') }
+                       // else {alert('not valid')}
 
+                    })
+                    
+
+                    
+
+                </script>
 
 
             }
